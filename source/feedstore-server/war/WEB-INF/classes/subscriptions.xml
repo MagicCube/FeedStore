@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+    <head>
+        <title>Google 阅读器中 MagicCube 的订阅</title>
+    </head>
+    <body>
+        <outline title="Shopping" text="Shopping">
+            <outline text="买个便宜货、美国便宜货" title="买个便宜货、美国便宜货" type="rss"
+                xmlUrl="http://www.mgpyh.com/feed" htmlUrl="http://www.mgpyh.com"/>
+            <outline text="什么值得买" title="什么值得买" type="rss"
+                xmlUrl="http://www.smzdm.com/feed" htmlUrl="http://www.smzdm.com"/>
+        </outline>
+        <outline title="Others" text="Others">
+            <outline text="囧片王" title="囧片王" type="rss"
+                xmlUrl="http://fuyun.in/feed" htmlUrl="http://fuyun.in"/>
+        </outline>
+        <outline title="UED" text="UED">
+            <outline
+                text="LPUED Team: 无名良品用户体验团队博客，有关用户体验设计和研究的经验分享。 - LPUED"
+                title="LPUED Team: 无名良品用户体验团队博客，有关用户体验设计和研究的经验分享。 - LPUED"
+                type="rss" xmlUrl="http://www.lpued.com/?feed=rss2" htmlUrl="http://www.lpued.com"/>
+            <outline text="Taobao UED Team" title="Taobao UED Team"
+                type="rss" xmlUrl="http://ued.taobao.com/blog/feed/" htmlUrl="http://ued.taobao.com/blog"/>
+            <outline text="腾讯CDC" title="腾讯CDC" type="rss"
+                xmlUrl="http://cdc.tencent.com/?feed=rss2" htmlUrl="http://cdc.tencent.com"/>
+            <outline text="阿里巴巴（中国站）用户体验设计部博客"
+                title="阿里巴巴（中国站）用户体验设计部博客" type="rss"
+                xmlUrl="http://www.aliued.cn/feed" htmlUrl="http://www.aliued.cn"/>
+        </outline>
+        
+        <outline title="Science Tech" text="Science Tech">
+            <outline text="36氪" title="36氪" type="rss"
+                xmlUrl="http://www.36kr.com/feed" htmlUrl="http://www.36kr.com/"/>
+            <outline text="CoCo的小黑屋" title="CoCo的小黑屋" type="rss"
+                xmlUrl="http://www.acwind.net/blog/?feed=rss2" htmlUrl="http://www.acwind.net/blog"/>
+            <outline text="Engadget 中国版" title="Engadget 中国版" type="rss"
+                xmlUrl="http://cn.engadget.com/rss.xml" htmlUrl="http://cn.engadget.com"/>
+            <outline text="Gizmodo" title="Gizmodo" type="rss"
+                xmlUrl="http://gizmodo.com/rss" htmlUrl="http://gizmodo.com"/>
+            <outline text="Lifehacker" title="Lifehacker" type="rss"
+                xmlUrl="http://lifehacker.com/index.xml" htmlUrl="http://lifehacker.com"/>
+            <outline text="TechWeb 每日热点推荐 RSS阅读"
+                title="TechWeb 每日热点推荐 RSS阅读" type="rss"
+                xmlUrl="http://www.techweb.com.cn/rss/hotnews.xml" htmlUrl="http://www.techweb.com.cn/rss/hotnews.xml"/>
+            <outline text="九点 科技" title="九点 科技" type="rss"
+                xmlUrl="http://9.douban.com/rss/technology" htmlUrl="http://9.douban.com/channel/technology"/>
+            <outline text="同步控" title="同步控" type="rss"
+                xmlUrl="http://www.syncoo.com/feed/atom" htmlUrl="http://www.syncoo.com/"/>
+            <outline text="数字尾巴 - DGtle.com" title="数字尾巴 - DGtle.com"
+                type="rss" xmlUrl="http://rss.dgtle.com/" htmlUrl="http://www.dgtle.com/forum.php"/>
+            <outline text="InfoQ 个性化 RSS Feed"
+                title="InfoQ 个性化 RSS Feed" type="rss"
+                xmlUrl="http://www.infoq.com/cn/rss/rss.action?token=b297uU1Tytv81AZ2PanE3EUMe4dsR7Tc" htmlUrl="http://www.infoq.com/cn/"/>
+            <outline text="爱活网" title="爱活网" type="rss"
+                xmlUrl="http://feed.evolife.cn/" htmlUrl="http://www.evolife.cn"/>
+            <outline text="爱范儿: 拇指资讯小众讨论" title="爱范儿: 拇指资讯小众讨论"
+                type="rss" xmlUrl="http://www.ifanr.com/feed" htmlUrl="http://www.ifanr.com"/>
+        </outline>
+        <outline title="Apple" text="Apple">
+            <outline text="AppleInsider" title="AppleInsider" type="rss"
+                xmlUrl="http://feeds.pheedo.com/appleinsider" htmlUrl="http://appleinsider.com"/>
+            <outline text="Lucifr" title="Lucifr" type="rss"
+                xmlUrl="http://feed.lucifr.com/" htmlUrl="http://lucifr.com"/>
+            <outline text="Mac OS X Hints" title="Mac OS X Hints"
+                type="rss"
+                xmlUrl="http://rss.macworld.com/macworld/weblogs/macosxhints" htmlUrl="http://www.macworld.com"/>
+            <outline text="Macworld" title="Macworld" type="rss"
+                xmlUrl="http://rss.macworld.com/macworld/feeds/main" htmlUrl="http://www.macworld.com"/>
+            <outline
+                text="News and reviews of Mac software - the most comprehensive Mac software reviews on the Web"
+                title="News and reviews of Mac software - the most comprehensive Mac software reviews on the Web"
+                type="rss"
+                xmlUrl="http://rss.macworld.com/macworld/products/mac/software" htmlUrl="http://www.macworld.com"/>
+            <outline text="OSX玩意 / OSXToy" title="OSX玩意 / OSXToy"
+                type="rss" xmlUrl="http://www.osxtoy.com/?feed=rss2" htmlUrl="http://www.osxtoy.com"/>
+            <outline text="Tip4Mac" title="Tip4Mac" type="rss"
+                xmlUrl="http://www.tip4mac.com/feed/" htmlUrl="http://www.tip4mac.com"/>
+            <outline text="小众软件" title="小众软件" type="rss"
+                xmlUrl="http://feed.appinn.com/" htmlUrl="http://www.appinn.com"/>
+            <outline text="铭" title="铭" type="rss"
+                xmlUrl="http://opnir.com/feed" htmlUrl="http://opnir.com"/>
+        </outline>
+        <outline title="Google" text="Google">
+            <outline text="Chrome迷" title="Chrome迷" type="rss"
+                xmlUrl="http://www.chromi.org/feed" htmlUrl="http://www.chromi.org"/>
+            <outline text="谷奥聚合——谷奥主站+谷安 aggregator"
+                title="谷奥聚合——谷奥主站+谷安 aggregator" type="rss"
+                xmlUrl="http://feed-all.google.org.cn/" htmlUrl="http://rss.guao.cc/aggregator"/>
+        </outline>
+        <outline title="Photography" text="Photography">
+            <outline text="Leica中文摄影杂志" title="Leica中文摄影杂志" type="rss"
+                xmlUrl="http://feed.feedsky.com/leica" htmlUrl="http://www.leica.org.cn/index.php"/>
+            <outline text="來自 * Henry Lee 的自己人"
+                title="來自 * Henry Lee 的自己人" type="rss"
+                xmlUrl="http://api.flickr.com/services/feeds/photos_friends.gne?user_id=29764674@N04&amp;friends=0&amp;display_all=0&amp;lang=zh-hk&amp;format=atom" htmlUrl="http://www.flickr.com/photos/magiccube/friends/"/>
+        </outline>
+        <outline title="Design" text="Design">
+            <outline text="Dribbble/Popular" title="Dribbble/Popular"
+                type="rss"
+                xmlUrl="http://dribbble.com/shots/popular.rss" htmlUrl="http://dribbble.com/"/>
+            <outline text="The Design Inspiration"
+                title="The Design Inspiration" type="rss"
+                xmlUrl="http://feeds.feedburner.com/dspn/everyone/" htmlUrl="http://feeds.feedburner.com/dspn/everyone/"/>
+            <outline text="Premium Pixels" title="Premium Pixels"
+                type="rss"
+                xmlUrl="http://feeds.feedburner.com/premiumpixels" htmlUrl="http://www.premiumpixels.com"/>
+            <outline
+                text="The Best Designs / Best Web Design Awards &amp; CSS Gallery"
+                title="The Best Designs / Best Web Design Awards &amp; CSS Gallery"
+                type="rss"
+                xmlUrl="http://feeds.feedburner.com/thebestdesigns" htmlUrl="http://www.thebestdesigns.com"/>
+        </outline>
+    </body>
+</opml>

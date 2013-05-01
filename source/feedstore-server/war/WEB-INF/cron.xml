@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cronentries>
+<!-- 
+    <cron>
+        <url>/api/schedule/update-all</url>
+        <description>Update All Channels</description>
+        <schedule>every 5 minutes</schedule>
+    </cron>
+ -->
+</cronentries>
