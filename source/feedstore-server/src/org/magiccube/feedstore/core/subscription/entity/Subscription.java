@@ -1,7 +1,7 @@
 package org.magiccube.feedstore.core.subscription.entity;
 
 import org.magiccube.feedstore.common.entity.AbstractEntity;
-import org.magiccube.feedstore.core.feed.biz.FeedChannelManager;
+import org.magiccube.feedstore.core.feed.biz.FeedManager;
 import org.magiccube.feedstore.core.feed.entity.FeedChannel;
 
 import com.google.appengine.api.datastore.Entity;
@@ -64,7 +64,7 @@ public class Subscription extends AbstractEntity
 	{
 		if (_channel == null && _channelId != null)
 		{
-			_channel = FeedChannelManager.getInstance().getChannels().getEntityById(_channelId);
+			_channel = FeedManager.getInstance().getChannels().getEntityById(_channelId);
 		}
 		return _channel;
 	}

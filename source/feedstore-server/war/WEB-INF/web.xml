@@ -9,9 +9,10 @@
         <param-name>resteasy.resources</param-name>  
         <param-value>
             org.magiccube.feedstore.server.resource.FeedChannelResource,
+            org.magiccube.feedstore.server.resource.FeedEntryResource,
             org.magiccube.feedstore.server.resource.SetupResource,
             org.magiccube.feedstore.server.resource.ScheduleResource,
-            org.magiccube.feedstore.server.resource.SubscriptionResource,
+            org.magiccube.feedstore.server.resource.SubscriptionResource
         </param-value>  
     </context-param>  
    <listener>  

@@ -1,4 +1,10 @@
-<!-- Indices written at Wed, 1 May 2013 19:24:52 CST -->
+<!-- Indices written at Wed, 1 May 2013 23:47:32 CST -->
 
-<datastore-indexes/>
+<datastore-indexes>
 
+    <!-- Used 1 time in query history -->
+    <datastore-index kind="FeedEntry" ancestor="false" source="auto">
+        <property name="__key__" direction="desc"/>
+    </datastore-index>
+
+</datastore-indexes>

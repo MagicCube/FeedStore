@@ -7,6 +7,7 @@ import org.magiccube.feedstore.common.entity.ImageInfo;
 
 import com.google.appengine.api.datastore.Entity;
 import com.google.appengine.api.datastore.Key;
+import com.google.appengine.api.datastore.Text;
 
 public class FeedEntry extends AbstractEntity
 {
@@ -20,22 +21,22 @@ public class FeedEntry extends AbstractEntity
 		fromGAEEntity(p_gaeEntity);
 	}
 	
-	public FeedEntry(String p_title, String p_entryType, String p_contentType, String p_subscriptionId)
+	public FeedEntry(String p_title, String p_entryType, String p_contentType, String p_channelId)
 	{
 		super(p_title);
-		_subscriptionId = p_subscriptionId;
+		_channelId = p_channelId;
 		_entryType = p_entryType;
 		_contentType = p_contentType;
-		_subscriptionId = p_subscriptionId;
+		_channelId = p_channelId;
 	}
 	
 	public FeedEntry(String p_id, String p_title, String p_entryType, String p_contentType, String p_subscriptionId)
 	{
 		super(p_id, p_title);
-		_subscriptionId = p_subscriptionId;
+		_channelId = p_subscriptionId;
 		_entryType = p_entryType;
 		_contentType = p_contentType;
-		_subscriptionId = p_subscriptionId;
+		_channelId = p_subscriptionId;
 	}
 	
 	
@@ -56,26 +57,14 @@ public class FeedEntry extends AbstractEntity
 	}
 	
 	
-	private String _subscriptionId = null;
-	public String getSubscriptionId()
+	private String _channelId = null;
+	public String getChannelId()
 	{
-		return _subscriptionId;
+		return _channelId;
 	}
-	public void setSubscriptionId(String p_id)
+	public void setChannelId(String p_id)
 	{
-		_subscriptionId = p_id;
-	}
-	
-	
-	
-	private Date _storedTime = null;
-	public Date getStoredTime()
-	{
-		return _storedTime;
-	}
-	public void setStoredTime(Date p_time)
-	{
-		_storedTime = p_time;
+		_channelId = p_id;
 	}
 	
 	
@@ -137,6 +126,14 @@ public class FeedEntry extends AbstractEntity
 	public Entity toGAEEntity(Key p_parent)
 	{
 		Entity entity = super.toGAEEntity(p_parent);
+		
+		entity.setProperty("channelId", getChannelId());
+		entity.setProperty("entryType", getEntryType());
+		entity.setProperty("author", getAuthor());
+		entity.setProperty("content", new Text(getContent()));
+		entity.setProperty("contentType", getContentType());
+		entity.setProperty("publishTime", getPublishTime());
+		
 		if (getImage() != null)
 		{
 			entity.setProperty("imageUrl", getImage().getUrl());
@@ -156,6 +153,14 @@ public class FeedEntry extends AbstractEntity
 	public void fromGAEEntity(Entity p_entity)
 	{
 		super.fromGAEEntity(p_entity);
+		
+		setChannelId((String)p_entity.getProperty("channelId"));
+		setEntryType((String)p_entity.getProperty("entryType"));
+		setAuthor((String)p_entity.getProperty("author"));
+		setContent(((Text)(p_entity.getProperty("content"))).getValue());
+		setContentType((String)p_entity.getProperty("contentType"));
+		setPublishTime((Date)p_entity.getProperty("publishTime"));
+		
 		if (p_entity.getProperty("imageUrl") != null)
 		{
 			ImageInfo image = new ImageInfo(

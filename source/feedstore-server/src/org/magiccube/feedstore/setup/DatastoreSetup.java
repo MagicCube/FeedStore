@@ -5,7 +5,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.List;
 
-import org.magiccube.feedstore.core.feed.biz.FeedChannelManager;
+import org.magiccube.feedstore.core.feed.biz.FeedManager;
 import org.magiccube.feedstore.core.subscription.biz.SubscriptionManager;
 import org.magiccube.feedstore.core.subscription.entity.Subscription;
 import org.magiccube.feedstore.core.subscription.entity.SubscriptionCategory;
@@ -21,6 +21,8 @@ public class DatastoreSetup
 	@SuppressWarnings("unchecked")
 	public static void loadOpml(File p_file) throws IllegalArgumentException, IOException, FeedException
 	{
+		clean();
+		
 		WireFeedInput feedInput = new WireFeedInput();
 		
 		InputSource inputSource = new InputSource(new FileInputStream(p_file));
@@ -53,6 +55,6 @@ public class DatastoreSetup
 	public static void clean()
 	{
 		SubscriptionManager.getInstance().clearAll();
-		FeedChannelManager.getInstance().clearAll();
+		FeedManager.getInstance().clearAll();
 	}
 }

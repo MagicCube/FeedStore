@@ -8,6 +8,7 @@ import org.magiccube.feedstore.common.entity.AbstractEntity;
 import org.magiccube.feedstore.common.entity.EntityList;
 
 import com.google.appengine.api.datastore.Entity;
+import com.google.appengine.api.datastore.FetchOptions;
 import com.google.appengine.api.datastore.Key;
 import com.google.appengine.api.datastore.KeyFactory;
 import com.google.appengine.api.datastore.Query;
@@ -44,6 +45,33 @@ public abstract class AbstractEntityDao<T extends AbstractEntity> extends Abstra
 			err.printStackTrace();
 		}
 		return e;
+	}
+	
+	public Query createQuery()
+	{
+		Query query = new Query(getEntityKind());
+		return query;
+	}
+
+	
+	public EntityList<T> select(Query p_query, int p_offset, int p_limit)
+	{
+		EntityList<T> result = new EntityList<T>();
+		FetchOptions options = FetchOptions.Builder.withDefaults();
+		if (p_limit > 0)
+		{
+			options.limit(p_limit);
+			options.offset(p_offset);
+		}
+		
+		Iterable<Entity> iterable = getDatastoreService().prepare(p_query).asIterable(options);
+		for (Entity entity : iterable)
+		{
+			T e = createEntityInstance();
+			e.fromGAEEntity(entity);
+			result.add(e);
+		}
+		return result;
 	}
 	
 	public EntityList<T> selectAll()

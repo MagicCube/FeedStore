@@ -2,12 +2,18 @@ package org.magiccube.feedstore.core.feedlet;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Date;
+import java.util.List;
 import java.util.logging.Logger;
 
+import org.magiccube.feedstore.common.entity.EntityList;
 import org.magiccube.feedstore.common.entity.ImageInfo;
-import org.magiccube.feedstore.core.feed.biz.FeedChannelManager;
+import org.magiccube.feedstore.core.feed.biz.FeedManager;
 import org.magiccube.feedstore.core.feed.entity.FeedChannel;
+import org.magiccube.feedstore.core.feed.entity.FeedEntry;
 
+import com.sun.syndication.feed.synd.SyndContent;
+import com.sun.syndication.feed.synd.SyndEntry;
 import com.sun.syndication.feed.synd.SyndFeed;
 import com.sun.syndication.fetcher.FeedFetcher;
 import com.sun.syndication.fetcher.impl.HttpURLFeedFetcher;
@@ -48,17 +54,78 @@ public class Feedlet
 		
 		if (feed == null) return;
 		
-		boolean channelChanged = updateChannel(feed);
-		if (channelChanged)
+		// Channel
+		boolean channelChanged = false;		
+		channelChanged = updateChannel(feed);
+		
+		// Entries
+		boolean entriesChanged = false;
+		EntityList<FeedEntry> newEntries = updateEntries(feed);
+		entriesChanged = newEntries.size() > 0;
+		
+		if (entriesChanged)
 		{
-			FeedChannelManager.getInstance().saveChannel(_channel);
-			_logger.info("<Feedlet> " + _channel + "'s changes have been saved.");
+			_logger.info("<Feedlet> " + _channel + "'s new " + newEntries.size() + " entries have been added.");
 		}
 		
+		if (entriesChanged || channelChanged)
+		{
+			FeedManager.getInstance().saveChannel(_channel);
+			_logger.info("<Feedlet> " + _channel + "'s changes have been saved.");
+		}
 		_logger.info("<Feedlet> " + _channel + " has been up-to-dated.");
 	}
 	
 	
+	private EntityList<FeedEntry> updateEntries(SyndFeed feed)
+	{
+		EntityList<FeedEntry> result = new EntityList<FeedEntry>();
+		@SuppressWarnings("unchecked")
+		List<SyndEntry> entries = feed.getEntries();
+		
+		Date lastUpdatedTime = _channel.getLastUpdateTime();
+		
+		for (SyndEntry entry : entries)
+		{
+			if (entry.getPublishedDate() == null)
+			{
+				continue;
+			}
+			
+			if (lastUpdatedTime != null)
+			{
+				int offset = entry.getPublishedDate().compareTo(lastUpdatedTime);
+				if (offset <= 0)
+				{
+					break;
+				}
+			}
+			
+			FeedEntry feedEntry = new FeedEntry(entry.getTitle(), "rss", "text/html", _channel.getId());
+			feedEntry.setUrl(entry.getLink());
+			feedEntry.setAuthor(entry.getAuthor());
+			feedEntry.setPublishTime(entry.getPublishedDate());
+			
+			if (entry.getContents().size() > 0)
+			{
+				SyndContent content = (SyndContent)entry.getContents().get(0);
+				feedEntry.setContent(content.getValue());
+			}
+			else if (entry.getDescription() != null)
+			{
+				feedEntry.setContent(entry.getDescription().getValue());
+			}
+			
+			FeedManager.getInstance().createEntry(feedEntry);
+			result.add(feedEntry);
+			if (result.size() == 1)
+			{
+				_channel.setLastUpdateTime(feedEntry.getPublishTime());
+			}
+		}
+		return result;
+	}
+
 	public boolean updateChannel(SyndFeed p_feed)
 	{
 		boolean changed = false;

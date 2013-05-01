@@ -6,7 +6,7 @@ import java.io.IOException;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 
-import org.magiccube.feedstore.core.feed.biz.FeedChannelManager;
+import org.magiccube.feedstore.core.feed.biz.FeedManager;
 import org.magiccube.feedstore.setup.DatastoreSetup;
 
 import com.sun.syndication.io.FeedException;
@@ -30,6 +30,6 @@ public class SetupResource extends AbstractResource
 	{
 		String path = this.getClass().getResource("/subscriptions.xml").getFile();
 		DatastoreSetup.loadOpml(new File(path));
-		return FeedChannelManager.getInstance().getChannels().size() + " channel(s) were loaded.";
+		return FeedManager.getInstance().getChannels().size() + " channel(s) were loaded.";
 	}
 }

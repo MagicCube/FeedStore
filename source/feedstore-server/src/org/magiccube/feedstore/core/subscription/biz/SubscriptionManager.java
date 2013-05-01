@@ -1,7 +1,7 @@
 package org.magiccube.feedstore.core.subscription.biz;
 
 import org.magiccube.feedstore.common.entity.EntityList;
-import org.magiccube.feedstore.core.feed.biz.FeedChannelManager;
+import org.magiccube.feedstore.core.feed.biz.FeedManager;
 import org.magiccube.feedstore.core.feed.entity.FeedChannel;
 import org.magiccube.feedstore.core.subscription.dao.SubscriptionCategoryDao;
 import org.magiccube.feedstore.core.subscription.dao.SubscriptionDao;
@@ -65,10 +65,10 @@ public class SubscriptionManager
 	
 	public Subscription subscribeAsync(String p_url, String p_categoryId, String p_alias)
 	{
-		FeedChannel channel = FeedChannelManager.getInstance().getChannels().getEntityByUrl(p_url);
+		FeedChannel channel = FeedManager.getInstance().getChannels().getEntityByUrl(p_url);
 		if (channel == null)
 		{
-			channel = FeedChannelManager.getInstance().createChannelAsync(p_url, p_alias);
+			channel = FeedManager.getInstance().createChannelAsync(p_url, p_alias);
 		}
 		if (channel == null)
 		{

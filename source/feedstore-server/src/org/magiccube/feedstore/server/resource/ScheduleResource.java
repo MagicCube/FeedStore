@@ -6,7 +6,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 
 import org.magiccube.feedstore.common.entity.EntityList;
-import org.magiccube.feedstore.core.feed.biz.FeedChannelManager;
+import org.magiccube.feedstore.core.feed.biz.FeedManager;
 import org.magiccube.feedstore.core.feed.entity.FeedChannel;
 
 import com.google.appengine.api.taskqueue.Queue;
@@ -30,13 +30,13 @@ public class ScheduleResource
 		_logger.info("Updating all channels...");
 		
 		Queue queue = QueueFactory.getDefaultQueue();
-		EntityList<FeedChannel> channels = FeedChannelManager.getInstance().getChannels();
+		EntityList<FeedChannel> channels = FeedManager.getInstance().getChannels();
 		for (FeedChannel channel : channels)
 		{
 			String url = "/api/channel/" + channel.getId() + "/update";
 			queue.add(TaskOptions.Builder.withUrl(url));
 		}
 				
-		return "All channels will be up-to-dated.";
+		return channels.size() + " tasks added.";
 	}
 }

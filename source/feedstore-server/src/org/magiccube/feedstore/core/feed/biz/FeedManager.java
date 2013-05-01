@@ -2,21 +2,25 @@ package org.magiccube.feedstore.core.feed.biz;
 
 import org.magiccube.feedstore.common.entity.EntityList;
 import org.magiccube.feedstore.core.feed.dao.FeedChannelDao;
+import org.magiccube.feedstore.core.feed.dao.FeedEntryDao;
 import org.magiccube.feedstore.core.feed.entity.FeedChannel;
+import org.magiccube.feedstore.core.feed.entity.FeedEntry;
 
-public class FeedChannelManager
+import com.google.appengine.api.datastore.Query;
+
+public class FeedManager
 {
-	private FeedChannelManager()
+	private FeedManager()
 	{
 		_loadChannels();
 	}
 	
-	private static FeedChannelManager _instance;
-	public static FeedChannelManager getInstance() 
+	private static FeedManager _instance;
+	public static FeedManager getInstance() 
 	{
 		if (_instance == null)
 		{
-			_instance = new FeedChannelManager();
+			_instance = new FeedManager();
 		}
 		return _instance;
 	}
@@ -28,6 +32,12 @@ public class FeedChannelManager
 		return _channelDao;
 	}
 	
+	private FeedEntryDao _entryDao = new FeedEntryDao();
+	public FeedEntryDao getEntryDao()	
+	{
+		return _entryDao;
+	}
+	
 	
 	private EntityList<FeedChannel> _channels = new EntityList<FeedChannel>();
 	public EntityList<FeedChannel> getChannels()
@@ -35,6 +45,14 @@ public class FeedChannelManager
 		return _channels;
 	}
 	
+	
+	
+	public EntityList<FeedEntry> fetchEntries(int p_count, String p_after)
+	{
+		Query query = getEntryDao().createQuery();
+		EntityList<FeedEntry> entries = getEntryDao().select(query, 0, p_count);
+		return entries;
+	}
 	
 	
 	
@@ -60,9 +78,25 @@ public class FeedChannelManager
 		_channelDao.put(p_channel);
 	}
 	
+	
+	
+	
+	public void createEntry(FeedEntry p_entry)
+	{
+		_entryDao.put(p_entry);
+	}
+	
+	public void saveEntry(FeedEntry p_entry)
+	{
+		_entryDao.put(p_entry);
+	}
+	
+	
+	
 	public void clearAll()
 	{
 		_channelDao.clearAll();
+		_entryDao.clearAll();
 		_channels.clear();
 	}
 	

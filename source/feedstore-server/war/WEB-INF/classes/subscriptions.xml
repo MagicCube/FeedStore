@@ -100,7 +100,7 @@
                 xmlUrl="http://dribbble.com/shots/popular.rss" htmlUrl="http://dribbble.com/"/>
             <outline text="The Design Inspiration"
                 title="The Design Inspiration" type="rss"
-                xmlUrl="http://feeds.feedburner.com/dspn/everyone/" htmlUrl="http://feeds.feedburner.com/dspn/everyone/"/>
+                xmlUrl="http://feeds.feedburner.com/dspn/everyone/" htmlUrl="http://designspiration.net/"/>
             <outline text="Premium Pixels" title="Premium Pixels"
                 type="rss"
                 xmlUrl="http://feeds.feedburner.com/premiumpixels" htmlUrl="http://www.premiumpixels.com"/>
