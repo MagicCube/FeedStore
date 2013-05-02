@@ -4,7 +4,7 @@ var scripts = document.getElementsByTagName("script");
 var src = scripts[scripts.length - 1].src;
 var srcPath = src.substr(0, src.lastIndexOf("/") + 1);
 
-include("lib/jquery/jQuery.js");
+include("lib/jquery/jquery.js");
 include("lib/jquery/jquery.transit.min.js");
 include("src/mx/javascript-extensions.js");
 include("src/mx/jquery-extensions.js");
