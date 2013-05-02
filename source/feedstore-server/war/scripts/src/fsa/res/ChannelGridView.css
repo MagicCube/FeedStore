@@ -1,40 +1,53 @@
 .ChannelGridView
 {
-    overflow-y: auto;
+    overflow: hidden;
     position: absolute;
-    padding-top: 32px;
+    cursor: default;
 }
 
-.ChannelGridView > #header
+.ChannelGridView #header
 {
     position: absolute;
     top: 0;
     left: 0;
 }
 
-.ChannelGridView > table
+.ChannelGridView #bodyContainer
+{
+    width: 100%;
+    height: 100%;
+    padding-top: 32px;
+    overflow-y: auto;
+}
+
+.ChannelGridView table
 {
     width: 100%;
     table-layout: fixed;
     border-collapse: collapse;
 }
 
-.ChannelGridView > table tr
+.ChannelGridView table tr
 {
     height: 32px;
 }
 
-.ChannelGridView > #body tr:hover
+.ChannelGridView #body tr:hover
 {
-    background-color: rgb(212, 212, 212);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#058cf5), color-stop(50%,#0275ee), color-stop(51%,#0275ee), color-stop(100%,#015de6));
 }
 
-.ChannelGridView > table tr:nth-child(2n)
+.ChannelGridView #body tr:hover td
+{
+    color: white;
+}
+
+.ChannelGridView table tr:nth-child(2n)
 {
     background: #f5f5f5;
 }
 
-.ChannelGridView > table td
+.ChannelGridView table td
 {
     color: #aaa;
     width: 125px;
@@ -46,7 +59,7 @@
     white-space: nowrap;
 }
 
-.ChannelGridView > table td#title
+.ChannelGridView table td#title
 {
     color: black;
     width: auto;
@@ -54,20 +67,20 @@
 }
 
 
-.ChannelGridView > #header td
+.ChannelGridView #header td
 {
     border-left: 1px solid silver;
     color: white;
-    background: #444;
+    background: rgba(68, 68, 68, 0.9);
     cursor: pointer;
 }
 
-.ChannelGridView > #header td#title
+.ChannelGridView #header td#title
 {
     color: white;
 }
 
-.ChannelGridView > #body td
+.ChannelGridView #body td
 {
     font-size: 10px;
 }

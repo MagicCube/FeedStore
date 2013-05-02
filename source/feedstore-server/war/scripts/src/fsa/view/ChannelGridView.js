@@ -47,7 +47,9 @@ fsa.view.ChannelGridView = function()
     function _initBodyTable()
     {
         var $table = $("<table id=body><tbody></table>");
-        me.$element.append($table);
+        var $tableContainer = $("<div id='bodyContainer'>");
+        $tableContainer.append($table);
+        me.$element.append($tableContainer);
         me.$tbody = $table.children("tbody");
     }
     
