@@ -79,6 +79,17 @@ public class FeedEntry extends AbstractEntity
 	}
 	
 	
+	private Date _storedTime = null;
+	public Date getStoredTime()
+	{
+		return _storedTime;
+	}
+	public void setStoredTime(Date p_time)
+	{
+		_storedTime = p_time;
+	}
+	
+	
 	private String _author = null;
 	public String getAuthor()
 	{
@@ -133,6 +144,7 @@ public class FeedEntry extends AbstractEntity
 		entity.setProperty("content", new Text(getContent()));
 		entity.setProperty("contentType", getContentType());
 		entity.setProperty("publishTime", getPublishTime());
+		entity.setProperty("storedTime", getStoredTime());
 		
 		if (getImage() != null)
 		{
@@ -160,6 +172,7 @@ public class FeedEntry extends AbstractEntity
 		setContent(((Text)(p_entity.getProperty("content"))).getValue());
 		setContentType((String)p_entity.getProperty("contentType"));
 		setPublishTime((Date)p_entity.getProperty("publishTime"));
+		setStoredTime((Date)p_entity.getProperty("storedTime"));
 		
 		if (p_entity.getProperty("imageUrl") != null)
 		{

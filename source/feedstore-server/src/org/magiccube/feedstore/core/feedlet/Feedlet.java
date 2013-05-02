@@ -8,6 +8,7 @@ import java.util.logging.Logger;
 
 import org.magiccube.feedstore.common.entity.EntityList;
 import org.magiccube.feedstore.common.entity.ImageInfo;
+import org.magiccube.feedstore.core.feed.biz.FeedChannelManager;
 import org.magiccube.feedstore.core.feed.biz.FeedManager;
 import org.magiccube.feedstore.core.feed.entity.FeedChannel;
 import org.magiccube.feedstore.core.feed.entity.FeedEntry;
@@ -70,7 +71,7 @@ public class Feedlet
 		
 		if (entriesChanged || channelChanged)
 		{
-			FeedManager.getInstance().saveChannel(_channel);
+			FeedChannelManager.getInstance().saveChannel(_channel);
 			_logger.info("<Feedlet> " + _channel + "'s changes have been saved.");
 		}
 		_logger.info("<Feedlet> " + _channel + " has been up-to-dated.");
@@ -83,7 +84,7 @@ public class Feedlet
 		@SuppressWarnings("unchecked")
 		List<SyndEntry> entries = feed.getEntries();
 		
-		Date lastUpdatedTime = _channel.getLastUpdateTime();
+		Date lastUpdatedTime = _channel.getLastStoredTime();
 		
 		for (SyndEntry entry : entries)
 		{
@@ -105,6 +106,7 @@ public class Feedlet
 			feedEntry.setUrl(entry.getLink());
 			feedEntry.setAuthor(entry.getAuthor());
 			feedEntry.setPublishTime(entry.getPublishedDate());
+			feedEntry.setStoredTime(new Date());
 			
 			if (entry.getContents().size() > 0)
 			{
@@ -116,13 +118,17 @@ public class Feedlet
 				feedEntry.setContent(entry.getDescription().getValue());
 			}
 			
-			FeedManager.getInstance().createEntry(feedEntry);
 			result.add(feedEntry);
-			if (result.size() == 1)
-			{
-				_channel.setLastUpdateTime(feedEntry.getPublishTime());
-			}
 		}
+		
+		if (result.size() > 0)
+		{
+			_channel.setLastPublishTime(result.get(0).getPublishTime());
+			_channel.setLastStoredTime(new Date());
+			FeedManager.getInstance().createEntries(result);
+		}
+		
+		_channel.setLastUpdatedTime(new Date());
 		return result;
 	}
 

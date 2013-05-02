@@ -152,7 +152,7 @@ public abstract class AbstractEntityDao<T extends AbstractEntity> extends Abstra
 	}
 	
 	
-	public void clearAll() 
+	public void clean() 
 	{
 		List<Key> keys = selectAllKeys();
 		getDatastoreService().delete(keys);

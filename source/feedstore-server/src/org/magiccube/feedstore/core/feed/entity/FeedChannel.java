@@ -37,14 +37,36 @@ public class FeedChannel extends AbstractEntity
 	}
 	
 	
-	private Date _lastUpateTime = null;
-	public Date getLastUpdateTime()
+	private Date _lastStoredTime = null;
+	public Date getLastStoredTime()
 	{
-		return _lastUpateTime;
+		return _lastStoredTime;
 	}
-	public void setLastUpdateTime(Date p_time)
+	public void setLastStoredTime(Date p_time)
 	{
-		_lastUpateTime = p_time;
+		_lastStoredTime = p_time;
+	}
+	
+	
+	private Date _lastPublishTime = null;
+	public Date getLastPublishTime()
+	{
+		return _lastPublishTime;
+	}
+	public void setLastPublishTime(Date p_time)
+	{
+		_lastPublishTime = p_time;
+	}
+	
+	
+	private Date _lastUpdatedTime = null;
+	public Date getLastUpdatedTime()
+	{
+		return _lastUpdatedTime;
+	}
+	public void setLastUpdatedTime(Date p_time)
+	{
+		_lastUpdatedTime = p_time;
 	}
 	
 	
@@ -85,7 +107,9 @@ public class FeedChannel extends AbstractEntity
 		Entity entity = super.toGAEEntity(p_parent);
 		
 		entity.setProperty("link", getLink());
-		entity.setProperty("lastUpdateTime", getLastUpdateTime());
+		//entity.setProperty("lastUpdatedTime", getLastUpdatedTime());
+		entity.setProperty("lastStoredTime", getLastStoredTime());
+		entity.setProperty("lastPublishTime", getLastPublishTime());
 		entity.setProperty("description", getDescription());
 		if (getImage() != null)
 		{
@@ -109,7 +133,9 @@ public class FeedChannel extends AbstractEntity
 		super.fromGAEEntity(p_entity);
 		
 		setLink((String)p_entity.getProperty("link"));
-		setLastUpdateTime((Date)p_entity.getProperty("lastUpdateTime"));
+		//setLastUpdatedTime((Date)p_entity.getProperty("lastUpdatedTime"));
+		setLastStoredTime((Date)p_entity.getProperty("lastStoredTime"));
+		setLastPublishTime((Date)p_entity.getProperty("lastPublishTime"));
 		setDescription((String)p_entity.getProperty("description"));
 		
 		if (p_entity.getProperty("imageUrl") != null)

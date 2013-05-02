@@ -10,7 +10,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
 import org.magiccube.feedstore.common.entity.EntityList;
-import org.magiccube.feedstore.core.feed.biz.FeedManager;
+import org.magiccube.feedstore.core.feed.biz.FeedChannelManager;
 import org.magiccube.feedstore.core.feed.entity.FeedChannel;
 import org.magiccube.feedstore.core.feedlet.Feedlet;
 
@@ -28,7 +28,7 @@ public class FeedChannelResource extends AbstractResource
 	@Produces("application/json")
 	public EntityList<FeedChannel> getChannels()
 	{
-		return FeedManager.getInstance().getChannels();
+		return FeedChannelManager.getInstance().getChannels();
 	}
 	
 	@POST
@@ -37,7 +37,7 @@ public class FeedChannelResource extends AbstractResource
 			@PathParam("id") String p_id
 			)
 	{
-		FeedChannel channel = FeedManager.getInstance().getChannels().getEntityById(p_id);
+		FeedChannel channel = FeedChannelManager.getInstance().getChannels().getEntityById(p_id);
 		if (channel != null)
 		{
 			Feedlet feedlet = new Feedlet(channel);
