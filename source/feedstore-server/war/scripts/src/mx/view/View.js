@@ -40,10 +40,10 @@ mx.view.View = function()
         {
             me.$container = me.$element;
         }
-        
+                
         if (notEmpty(me.$element.attr("id")) && isEmpty(me.id))
         {
-            me.id = me.$element.attr("id");
+            alert(me.id)
         }
         
         if (isEmpty(me.id) && isEmpty(me.$element.attr("id")))
@@ -65,36 +65,29 @@ mx.view.View = function()
         me.setFrame(me.frame);
     };
     
-    me.setFrame = function(p_frame)
+    me.setFrame = function(p_frame, p_animated)
     {
         if (p_frame != null)
         {
-            me.frame = p_frame;
-            if (p_frame.left != null)
-            {
-                me.$element.css("left", p_frame.left);
-            }
-            if (p_frame.right != null)
-            {
-                me.$element.css("right", p_frame.right);
-            }
-            if (p_frame.top != null)
-            {
-                me.$element.css("top", p_frame.top);
-            }
-            if (p_frame.bottom != null)
-            {
-                me.$element.css("bottom", p_frame.bottom);
-            }
-            if (p_frame.width != null)
-            {
-                me.$element.css("width", p_frame.width);
-            }
-            if (p_frame.height != null)
-            {
-                me.$element.css("height", p_frame.height);
-            }
-            if (p_frame.left != null || p_frame.right != null || p_frame.top != null || p_frame.bottom != null)
+        	if (me.frame != null)
+        	{
+        		me.frame = $.extend(me.frame, p_frame);
+        	}
+        	else
+        	{
+        		me.frame = p_frame;
+        	}
+        	
+        	if (p_animated)
+    		{
+        		me.$element.animate(me.frame, p_animated);
+    		}
+        	else
+    		{
+        		me.$element.css(me.frame);
+    		}
+            
+            if (me.frame.left != null || me.frame.right != null || me.frame.top != null || me.frame.bottom != null)
             {
                 me.$element.css("position", "absolute");
             }

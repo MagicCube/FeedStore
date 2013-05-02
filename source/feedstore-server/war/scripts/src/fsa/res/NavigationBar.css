@@ -1,0 +1,36 @@
+.NavigationBar, .NavigationBar ul, .NavigationBar li, .NavigationBar ul li 
+{
+    display: block;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.NavigationBar li > span
+{
+    padding-left: 20px;
+}
+
+.NavigationBar > li
+{
+    line-height: 30px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.NavigationBar > li > span
+{
+    font-weight: normal;
+    font-size: 21px;
+}
+
+.NavigationBar > li > ul > li
+{
+    line-height: 28px;
+}
+
+.NavigationBar > li > ul > li.selected
+{
+    color: balck;
+    background: rgb(212, 212, 212);
+}

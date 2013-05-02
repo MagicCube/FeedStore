@@ -231,19 +231,48 @@ Date.format = function(p_value, p_formatString)
         }
         else if (p_formatString == "smart")
         {
-            var value = p_value * 1;
-            var today = Date.today * 1;
-            if (value > today)
+            var result = null;
+            var now = new Date();
+            var deltaMin = Math.round((now.getTime() - p_value) / 1000 / 60);
+            if (deltaMin <= 1)
             {
-                text = "HH:mm";
+                result = Math.round((now.getTime() - p_value) / 1000) + " 秒种前";
             }
-            else if (value > today - 24 * 60 * 60 * 1000)
+            else if (deltaMin < 60)
             {
-                return "昨天";
+                result = deltaMin + " 分钟前";
+            }
+            else if (deltaMin == 60)
+            {
+                result = "1 小时前";
             }
             else
             {
-                text = "M月d日";
+                var deltaHour = Math.round(deltaMin / 60);
+                if (deltaHour < 24)
+                {
+                    result = deltaHour + " 小时前";
+                }
+                else if (deltaHour == 24)
+                {
+                    result = "1 天前";
+                }
+                else
+                {
+                    var deltaDay = Math.round(deltaHour / 24);
+                    if (deltaDay < 8)
+                    {
+                        result = deltaDay + " 天前";
+                    }
+                }
+            }
+            if (result != null)
+            {
+                return result;
+            }
+            else
+            {
+                text = "yyyy年M月d日";
             }
         }
         else

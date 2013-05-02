@@ -1,7 +1,5 @@
 $ns("mx.app");
 
-$include("mt.res.app-mobile.css");
-
 mx.app.Application = function()
 {
     var me = $extend(mx.view.View);

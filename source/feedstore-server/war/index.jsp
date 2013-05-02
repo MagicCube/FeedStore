@@ -1,94 +1,51 @@
-<%@page import="org.magiccube.common.util.DateUtil"%>
-<%@page import="java.util.Date"%>
-<%@page import="org.magiccube.feedstore.core.feed.biz.FeedChannelManager"%>
-<%@page import="org.magiccube.feedstore.core.feed.entity.FeedChannel"%>
-<%@page import="org.magiccube.feedstore.common.entity.EntityList"%>
-<%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%!
-public String formatTime(Date p_date)
-{
-    if (p_date == null)
-    {
-        return "";
-    }
-    else
-    {
-        return DateUtil.formatDate(p_date, "yyyy-MM-dd HH:mm");   
-    }
-}
-%>
+<%@page contentType="text/html;charset=utf-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<title>MagicCube FeedStore</title>
-<link rel="stylesheet" href="/scripts/src/res/mx/res/mx-common.css">
-<style>
-.ChannelTable
-{
-    width: 1280px;
-    talbe-layout: fixed;
-    border-collapse: collapse;
-}
-
-.ChannelTable thead tr
-{
-    background: #0c0c0c;
-    color: white;
-}
-
-.ChannelTable tr
-{
-    height: 25px;
-}
-
-.ChannelTable tr:nth-child(2n)
-{
-    background: #efefef;
-}
-
-.ChannelTable tr td
-{
-    border: 1px solid #e0e0e0;
-    padding-left: 4px;
-    padding-right: 4px;
-}
-
-.ChannelTable tr td:nth-child(1)
-{
-    text-align: right;
-}
-</style>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script type="text/javascript" src="scripts/mxframework-debug.js"></script>
 </head>
+
 <body>
-<%
-EntityList<FeedChannel> channels = FeedChannelManager.getInstance().getChannels();
-int index = 0;
-%>
-
-<h1>Channels</h1>
-<table id="channelTable" class="ChannelTable" cellspacing="0" cellpadding="0">
-<thead>
-<tr>
-    <td></td>
-    <td>Title</td>
-    <td>Last Publish Time</td>
-    <td>Last Updated Time</td>
-    <td>Last Stored Time</td>
-</tr>
-</thead>
-
-<tbody>
-<%for (FeedChannel channel : channels) {%>
-<tr id="<%= channel.getId()%>">
-    <td><%= ++index%></td>
-    <td><%= channel.getTitle()%></td>
-    <td><%= formatTime(channel.getLastPublishTime())%></td>
-    <td><%= formatTime(channel.getLastUpdatedTime())%></td>
-    <td><%= formatTime(channel.getLastStoredTime())%></td>
-</tr>
-<%} %>
-</tbody>
-</table>
-
+<div id="fsa">
+    <div id="header">
+        <div id="appTitle"><h1>FeedStore</h1></div>
+        <div id="appToolBarContainer"></div>
+    </div>
+    <div id="body">
+        <div id="navigationPannel">
+            <ul id="navigationBar" class="NavigationBar">
+                <li>
+                    <span>文件夹</span>
+                    <ul>
+                        <li class="selected"><span>频道</span></li>
+                        <li><span>订阅</span></li>
+                        <li><span>新闻</span></li>
+                    </ul>
+                </li>
+                
+                <li>
+                    <span>系统</span>
+                    <ul>
+                        <li><span>设置</span></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        
+        <div id="contentPannel"></div>
+    </div>
+</div>
 </body>
-</html>
+
+<script>
+$import("fsa.App");
+
+mx.whenReady(function(){
+    fsa.app = new fsa.App({ $element: $("#fsa") });
+    fsa.app.run();
+});
+</script>
+
+</html> 

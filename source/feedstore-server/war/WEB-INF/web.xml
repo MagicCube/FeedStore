@@ -4,6 +4,10 @@
     xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
     xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
     http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+    
+    <listener>
+        <listener-class>org.magiccube.feedstore.server.listener.Bootstrap</listener-class>
+    </listener>
 	
     <context-param>  
         <param-name>resteasy.resources</param-name>  
@@ -23,7 +27,6 @@
       <servlet-name>Resteasy</servlet-name>  
       <servlet-class>org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher</servlet-class>  
    </servlet>  
-  
    <servlet-mapping>  
       <servlet-name>Resteasy</servlet-name>  
       <url-pattern>/api/*</url-pattern>  

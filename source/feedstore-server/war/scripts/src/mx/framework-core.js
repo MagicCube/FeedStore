@@ -181,7 +181,7 @@ MX = function()
     
     me._include_onload = function(e)
     {
-        var e = e ? e : event;
+        e = (e != null ? e : event);
         var element = null;
         if (e.srcElement != null)
         {
@@ -532,7 +532,6 @@ $import("mx.MXEvent");
 $import("mx.MXComponent");
 $import("mx.view.View");
 $import("mx.scn.Scene");
-$import("mx.scn.SceneContainer");
 $import("mx.app.Application");
 
 $include("mx.res.mx-common.css");

@@ -1,0 +1,91 @@
+*
+{
+    box-sizing: border-box;
+    font-family: '黑体', 'Microsoft Yahei', Verdana, Simsun, 'Segoe UI', 'Segoe UI Web Regular', 'Segoe UI Symbol', 'Helvetica Neue', 'BBAlpha Sans', 'S60 Sans', Arial, sans-serif;
+    font-size: 14px;
+}
+
+#fsa
+{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+
+#fsa > #header
+{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 40px;
+    color: white;
+    background: rgb(0, 114, 198);
+    background-repeat: no-repeat;
+    background-position: left top;
+}
+
+#fsa.loading > #header
+{
+    background-image: url(images/flyingdots.gif);
+}
+
+#fsa #appTitle h1
+{
+    display: inline-block;
+    padding: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0;
+    line-height: 40px;
+    font-size: 25px;
+    font-weight: normal;
+    font-family: Helvetica;
+}
+
+#fsa #appToolBarContainer
+{
+    position: absolute;
+    left: 200px;
+    right: 200px;
+    top: 0;
+    bottom: 0;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+
+
+
+
+#fsa > #body
+{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 40px;
+    bottom: 0;
+}
+
+#fsa > #body > #navigationPannel
+{
+    position: absolute;
+    width: 180px;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    color: #444;
+    background: rgb(243, 243, 243);
+}
+
+#fsa > #body > #contentPannel
+{
+    position: absolute;
+    left: 180px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
