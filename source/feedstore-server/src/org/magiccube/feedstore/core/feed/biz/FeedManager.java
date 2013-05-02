@@ -66,7 +66,7 @@ public class FeedManager
 	
 	
 	
-	public void clearAll()
+	public void clearn()
 	{
 		getEntryDao().clean();
 	}

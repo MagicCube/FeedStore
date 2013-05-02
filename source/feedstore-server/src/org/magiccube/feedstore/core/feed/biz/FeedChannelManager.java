@@ -59,7 +59,7 @@ public class FeedChannelManager
 	
 	
 	
-	public void clearAll()
+	public void clean()
 	{
 		getChannelDao().clean();
 		_channels.clear();

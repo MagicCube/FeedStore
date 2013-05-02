@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.List;
 
+import org.magiccube.feedstore.core.feed.biz.FeedChannelManager;
 import org.magiccube.feedstore.core.feed.biz.FeedManager;
 import org.magiccube.feedstore.core.subscription.biz.SubscriptionManager;
 import org.magiccube.feedstore.core.subscription.entity.Subscription;
@@ -54,7 +55,8 @@ public class DatastoreSetup
 	
 	public static void clean()
 	{
-		SubscriptionManager.getInstance().clearAll();
-		FeedManager.getInstance().clearAll();
+		SubscriptionManager.getInstance().clean();
+		FeedChannelManager.getInstance().clean();
+		FeedManager.getInstance().clearn();
 	}
 }

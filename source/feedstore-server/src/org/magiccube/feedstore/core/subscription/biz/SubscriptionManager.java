@@ -81,7 +81,7 @@ public class SubscriptionManager
 		return subscription;
 	}
 	
-	public void clearAll()
+	public void clean()
 	{
 		getCategoryDao().clean();
 		getSubscriptionDao().clean();
