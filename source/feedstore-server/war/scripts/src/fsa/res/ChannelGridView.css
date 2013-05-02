@@ -32,12 +32,12 @@
     height: 32px;
 }
 
-.ChannelGridView #body tr:hover
+.ChannelGridView #body tr:ACTIVE
 {
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#058cf5), color-stop(50%,#0275ee), color-stop(51%,#0275ee), color-stop(100%,#015de6));
 }
 
-.ChannelGridView #body tr:hover td
+.ChannelGridView #body tr:ACTIVE td
 {
     color: white;
 }
