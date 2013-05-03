@@ -38,6 +38,7 @@ public class Feedlet
 	public void update()
 	{
 		_logger.info("<Feedlet> Updating " + _channel + "...");
+		
 		FeedFetcher fetcher = new HttpURLFeedFetcher();
 		SyndFeed feed = null;
 		try
@@ -46,10 +47,12 @@ public class Feedlet
 		}
 		catch (IOException e)
 		{
+			e.printStackTrace();
 			return;
 		}
 		catch (Exception e)
 		{
+			e.printStackTrace();
 			return;
 		}
 		

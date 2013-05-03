@@ -55,13 +55,13 @@ public class TextStreamReader extends TextStreamAccessor {
 		return readBytes(0);
 	}
 
-	public String readText() throws IOException {
+	public String readToEnd() throws IOException {
 		byte[] bytes = readBytes();
 		return new String(bytes, getCharsetName());
 	}
 
 	public String[] readLines() throws IOException {
-		String text = readText();
+		String text = readToEnd();
 		return text.split("\n");
 	}
 
