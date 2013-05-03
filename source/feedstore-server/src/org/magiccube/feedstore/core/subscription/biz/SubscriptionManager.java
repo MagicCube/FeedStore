@@ -104,7 +104,10 @@ public class SubscriptionManager
 		for (Subscription subscription : subscriptions)
 		{
 			SubscriptionCategory category = categories.getEntityById(subscription.getCategoryId());
-			category.getItems().add(subscription);
+			if (category != null)
+			{
+				category.getItems().add(subscription);
+			}
 		}
 	}
 }

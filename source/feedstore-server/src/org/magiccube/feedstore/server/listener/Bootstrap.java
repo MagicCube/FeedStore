@@ -7,7 +7,6 @@ import javax.servlet.ServletContextListener;
 
 import org.magiccube.feedstore.core.feed.biz.FeedChannelManager;
 import org.magiccube.feedstore.core.feed.biz.FeedManager;
-import org.magiccube.feedstore.core.subscription.biz.SubscriptionManager;
 
 public class Bootstrap implements ServletContextListener 
 {
@@ -19,7 +18,6 @@ public class Bootstrap implements ServletContextListener
 		
 		FeedManager.getInstance();
 		FeedChannelManager.getInstance();
-		SubscriptionManager.getInstance();
 	}
 
 	@Override
