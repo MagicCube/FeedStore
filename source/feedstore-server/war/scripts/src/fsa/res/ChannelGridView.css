@@ -84,3 +84,8 @@
 {
     font-size: 10px;
 }
+
+.ChannelGridView #body td#lastUpdatedTime
+{
+    cursor: pointer;
+}

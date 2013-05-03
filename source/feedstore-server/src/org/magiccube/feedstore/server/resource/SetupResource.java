@@ -30,6 +30,7 @@ public class SetupResource extends AbstractResource
 	{
 		String path = this.getClass().getResource("/subscriptions.xml").getFile();
 		DatastoreSetup.loadOpml(new File(path));
+		new ScheduleResource().updateAll();
 		return FeedChannelManager.getInstance().getChannels().size() + " channel(s) were loaded.";
 	}
 }

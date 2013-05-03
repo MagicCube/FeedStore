@@ -39,7 +39,7 @@ fsa.view.ChannelGridView = function()
             $td.text(column.text);
             $tr.append($td);
         }
-        $tr.on("click", "td", _cell_onclick);
+        $tr.on("click", "td", _headerCell_onclick);
         me.$headerRow = $tr;
         me.$element.append($table);
     }
@@ -51,11 +51,13 @@ fsa.view.ChannelGridView = function()
         $tableContainer.append($table);
         me.$element.append($tableContainer);
         me.$tbody = $table.children("tbody");
+        me.$tbody.on("click", "td", _cell_onclick);
     }
     
     me.appendItem = function(p_item)
     {
         var $tr = $("<tr>");
+        $tr.attr("id", p_item.id);
         for (var i = 0; i < me.columns.length; i++)
         {
             var column = me.columns[i];
@@ -66,6 +68,17 @@ fsa.view.ChannelGridView = function()
         }
         me.$tbody.append($tr);
         me.items.add(p_item);
+    };
+    
+    me.renderItem = function(p_item)
+    {
+        var $tr = me.$tbody.children("#" + p_item.id);
+        for (var i = 0; i < me.columns.length; i++)
+        {
+            var column = me.columns[i];
+            var $td = $tr.children("#" + column.id);
+            me.formatCell($td, p_item[column.id], column);
+        }
     };
     
     me.appendItems = function(p_items)
@@ -120,7 +133,11 @@ fsa.view.ChannelGridView = function()
             {
                 var date = new Date(p_value);
                 var deltaSeconds = (new Date() - date) / 1000;
-                if (deltaSeconds > 0 && deltaSeconds < 60 * 60)
+                if (deltaSeconds <= 30)
+                {
+                    text = "刚刚";
+                }
+                else if (deltaSeconds > 30 && deltaSeconds < 60 * 60)
                 {
                     text = $format(date, "smart");
                 }
@@ -177,10 +194,36 @@ fsa.view.ChannelGridView = function()
     };
     
     
+    function _headerCell_onclick(e)
+    {
+        me.sort(e.target.id);
+    }
     
     function _cell_onclick(e)
     {
-        me.sort(e.target.id);
+        if (e.target.id == "lastUpdatedTime")
+        {
+            fsa.app.setLoading();
+            var id = e.target.parentNode.id;
+            $(e.target).text("正在更新...");
+            $.ajax({
+                method: "post",
+                url: "/api/channel/" + id + "/update"
+            }).success(function(p_result){
+                fsa.app.setLoading(false);
+                if (p_result != null)
+                {
+                    me.renderItem(p_result);
+                }
+                else
+                {
+                    $(e.target).text("失败");
+                }
+            }).error(function(){
+                fsa.app.setLoading(false);
+                $(e.target).text("失败");
+            });
+        }
     }
     
     return me.endOfClass(arguments);

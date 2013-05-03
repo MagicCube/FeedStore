@@ -35,9 +35,9 @@ public class Feedlet
 		return _channel;
 	}
 	
-	public void update()
+	public boolean update()
 	{
-		_logger.info("<Feedlet> Updating " + _channel + "...");
+		_logger.info("<Feedlet> Updating " + _channel + _channel.getId() + "...");
 		
 		FeedFetcher fetcher = new HttpURLFeedFetcher();
 		SyndFeed feed = null;
@@ -48,15 +48,15 @@ public class Feedlet
 		catch (IOException e)
 		{
 			e.printStackTrace();
-			return;
+			return false;
 		}
 		catch (Exception e)
 		{
 			e.printStackTrace();
-			return;
+			return false;
 		}
 		
-		if (feed == null) return;
+		if (feed == null) return false;
 		
 		// Channel
 		boolean channelChanged = false;		
@@ -78,6 +78,8 @@ public class Feedlet
 			_logger.info("<Feedlet> " + _channel + "'s changes have been saved.");
 		}
 		_logger.info("<Feedlet> " + _channel + " has been up-to-dated.");
+		
+		return true;
 	}
 	
 	

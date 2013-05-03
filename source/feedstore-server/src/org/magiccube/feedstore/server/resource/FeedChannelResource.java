@@ -33,7 +33,8 @@ public class FeedChannelResource extends AbstractResource
 	
 	@POST
 	@Path("{id}/update")
-	public String updateChannel(
+	@Produces("application/json")
+	public FeedChannel updateChannel(
 			@PathParam("id") String p_id
 			)
 	{
@@ -41,22 +42,20 @@ public class FeedChannelResource extends AbstractResource
 		if (channel != null)
 		{
 			Feedlet feedlet = new Feedlet(channel);
-			feedlet.update();
-			return "Channel Updated.";
+			boolean successful = feedlet.update();
+			if (successful)
+			{
+				return channel;
+			}
+			else
+			{
+				return null;
+			}
 		}
 		else
 		{
 			_logger.log(Level.WARNING, "Channel[" + p_id + "] is not found.");
-			return "Bad channel id.";
+			return null;
 		}
-	}
-	
-	@GET
-	@Path("{id}/update")
-	public String updateChannel2(
-			@PathParam("id") String p_id
-			)
-	{
-		return updateChannel(p_id);
 	}
 }
