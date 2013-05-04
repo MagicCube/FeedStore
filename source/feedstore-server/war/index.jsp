@@ -4,7 +4,7 @@
 <head>
 <title></title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<script type="text/javascript" src="scripts/mxframework-debug.js"></script>
+<script type="text/javascript" src="scripts/mx/debug.js"></script>
 </head>
 
 <body>

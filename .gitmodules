@@ -1,0 +1,3 @@
+[submodule "war/scripts/mx"]
+	path = war/scripts/mx
+	url = https://github.com/MagicCube/mxframework-core.git

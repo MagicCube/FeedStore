@@ -1,7 +1,8 @@
 $ns("fsa");
 
-$import("fsa.biz.ChannelManager");
+$import("lib.jquery.jquery-transit");
 
+$import("fsa.biz.ChannelManager");
 $import("fsa.scn.ChannelScene");
 
 $include("fsa.res.app.css");
