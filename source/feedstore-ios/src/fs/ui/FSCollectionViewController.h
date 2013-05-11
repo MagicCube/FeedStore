@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "../../ps/ui/PSCollectionView.h"
 
-@interface FSCollectionViewController : UIViewController <PSCollectionViewDelegate, PSCollectionViewDataSource>
+@interface FSCollectionViewController : UIViewController <PSCollectionViewDelegate, PSCollectionViewDataSource, UIScrollViewDelegate>
 
 @property (strong, nonatomic) PSCollectionView *collectionView;
+
+- (void)reloadData;
 
 @end

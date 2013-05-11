@@ -10,4 +10,6 @@
 
 @interface FSFeedCollectionViewController : FSCollectionViewController
 
+@property (strong, nonatomic) NSMutableArray *items;
+
 @end

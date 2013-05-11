@@ -40,6 +40,7 @@
         }
     }
     _collectionView.frame = CGRectMake(0, 0, [UIScreen mainScreen].applicationFrame.size.width, [UIScreen mainScreen].applicationFrame.size.height);
+    _collectionView.delegate = self;
     _collectionView.collectionViewDataSource = self;
     _collectionView.collectionViewDelegate = self;
     self.view = _collectionView;
@@ -59,12 +60,14 @@
 
 - (PSCollectionViewCell *)collectionView:(PSCollectionView *)collectionView cellForRowAtIndex:(NSInteger)index
 {
+    Class cellClass = [self collectionView:collectionView cellClassForRowAtIndex:index];
+    
     PSCollectionViewCell *cell = nil;
-    cell = [collectionView dequeueReusableViewForClass:[PSCollectionViewCell class]];
+    cell = [collectionView dequeueReusableViewForClass:cellClass];
     if (cell == nil)
     {
-        Class cellClass = [self collectionView:collectionView cellClassForRowAtIndex:index];
         cell = [[cellClass alloc] init];
+        NSLog(@"Create New");
     }
     return cell;
 }
@@ -72,6 +75,34 @@
 - (CGFloat)collectionView:(PSCollectionView *)collectionView heightForRowAtIndex:(NSInteger)index
 {
     return 128;
+}
+
+
+- (void)reloadData
+{
+    [self.collectionView reloadData];
+}
+
+
+
+
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    int deltaY = scrollView.contentSize.height - scrollView.contentOffset.y - scrollView.frame.size.height;
+    
+    if (deltaY <= 20)
+    {
+        [self reloadData];
+    }
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    if (!decelerate)
+    {
+        [self scrollViewDidEndDecelerating:scrollView];
+    }
 }
 
 @end

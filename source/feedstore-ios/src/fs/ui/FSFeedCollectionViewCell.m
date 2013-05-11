@@ -28,6 +28,7 @@
         
         static int labelCount = 0;
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(60, 0, 100, 40)];
+        label.textColor = UIColorHex(0xefefef);
         label.backgroundColor = [UIColor clearColor];
         label.text = [NSString stringWithFormat:@"%d", ++labelCount];
         [self addSubview:label];

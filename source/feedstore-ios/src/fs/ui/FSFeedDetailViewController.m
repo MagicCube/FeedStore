@@ -35,10 +35,6 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     self.view.layer.cornerRadius = 3;
-    
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeInfoDark];
-    [button addTarget:self action:@selector(_onclick) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:button];
 }
 
 
