@@ -8,28 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		20BB3FCBBF2C4E19B72A4BFE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7102B6C61CE54D5D93991638 /* libPods.a */; };
+		BA585638173E284200FBE9F2 /* App-Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA585637173E284200FBE9F2 /* App-Config.plist */; };
 		BA83C026173E2220004F8695 /* FSApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = BA83C01E173E2220004F8695 /* FSApplication.m */; };
 		BAB295BB173E0FC20054BBD3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB295BA173E0FC20054BBD3 /* UIKit.framework */; };
 		BAB295BD173E0FC20054BBD3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB295BC173E0FC20054BBD3 /* Foundation.framework */; };
 		BAB295BF173E0FC20054BBD3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB295BE173E0FC20054BBD3 /* CoreGraphics.framework */; };
-		BAB295C7173E0FC20054BBD3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB295C6173E0FC20054BBD3 /* main.m */; };
-		BAB295E5173E15860054BBD3 /* FeedStore-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BAB295E4173E15860054BBD3 /* FeedStore-Info.plist */; };
+		BAB295C7173E0FC20054BBD3 /* App-Main.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB295C6173E0FC20054BBD3 /* App-Main.m */; };
+		BAB295E5173E15860054BBD3 /* App-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BAB295E4173E15860054BBD3 /* App-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		459D6111A85142C1819DAEE9 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		7102B6C61CE54D5D93991638 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA585637173E284200FBE9F2 /* App-Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "App-Config.plist"; sourceTree = "<group>"; };
 		BA83C01D173E2220004F8695 /* FSApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSApplication.h; sourceTree = "<group>"; };
 		BA83C01E173E2220004F8695 /* FSApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSApplication.m; sourceTree = "<group>"; };
 		BA83C029173E22FB004F8695 /* UIColor+.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+.h"; sourceTree = "<group>"; };
 		BA83C02A173E2343004F8695 /* prefix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = prefix.h; sourceTree = "<group>"; };
-		BA83C032173E2741004F8695 /* FeedStore-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FeedStore-Prefix.pch"; sourceTree = "<group>"; };
+		BA83C032173E2741004F8695 /* App-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "App-Prefix.pch"; sourceTree = "<group>"; };
 		BAB295B7173E0FC20054BBD3 /* FeedStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FeedStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAB295BA173E0FC20054BBD3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BAB295BC173E0FC20054BBD3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BAB295BE173E0FC20054BBD3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		BAB295C6173E0FC20054BBD3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		BAB295E4173E15860054BBD3 /* FeedStore-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "FeedStore-Info.plist"; sourceTree = "<group>"; };
+		BAB295C6173E0FC20054BBD3 /* App-Main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "App-Main.m"; sourceTree = "<group>"; };
+		BAB295E4173E15860054BBD3 /* App-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "App-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,8 +150,8 @@
 			children = (
 				BA83C01B173E2220004F8695 /* fs */,
 				BA83C027173E224B004F8695 /* mx */,
-				BA83C032173E2741004F8695 /* FeedStore-Prefix.pch */,
-				BAB295C6173E0FC20054BBD3 /* main.m */,
+				BA83C032173E2741004F8695 /* App-Prefix.pch */,
+				BAB295C6173E0FC20054BBD3 /* App-Main.m */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -159,7 +161,8 @@
 			children = (
 				BAB295DE173E14B00054BBD3 /* icons */,
 				BAB295DF173E14B00054BBD3 /* images */,
-				BAB295E4173E15860054BBD3 /* FeedStore-Info.plist */,
+				BAB295E4173E15860054BBD3 /* App-Info.plist */,
+				BA585637173E284200FBE9F2 /* App-Config.plist */,
 			);
 			path = res;
 			sourceTree = "<group>";
@@ -232,7 +235,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAB295E5173E15860054BBD3 /* FeedStore-Info.plist in Resources */,
+				BAB295E5173E15860054BBD3 /* App-Info.plist in Resources */,
+				BA585638173E284200FBE9F2 /* App-Config.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,7 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAB295C7173E0FC20054BBD3 /* main.m in Sources */,
+				BAB295C7173E0FC20054BBD3 /* App-Main.m in Sources */,
 				BA83C026173E2220004F8695 /* FSApplication.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -345,8 +349,8 @@
 			baseConfigurationReference = 459D6111A85142C1819DAEE9 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "src/FeedStore-Prefix.pch";
-				INFOPLIST_FILE = "res/FeedStore-Info.plist";
+				GCC_PREFIX_HEADER = "src/App-Prefix.pch";
+				INFOPLIST_FILE = "res/App-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -358,8 +362,8 @@
 			baseConfigurationReference = 459D6111A85142C1819DAEE9 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "src/FeedStore-Prefix.pch";
-				INFOPLIST_FILE = "res/FeedStore-Info.plist";
+				GCC_PREFIX_HEADER = "src/App-Prefix.pch";
+				INFOPLIST_FILE = "res/App-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
