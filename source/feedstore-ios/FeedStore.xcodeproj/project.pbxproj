@@ -13,7 +13,7 @@
 		BAB295BD173E0FC20054BBD3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB295BC173E0FC20054BBD3 /* Foundation.framework */; };
 		BAB295BF173E0FC20054BBD3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB295BE173E0FC20054BBD3 /* CoreGraphics.framework */; };
 		BAB295C7173E0FC20054BBD3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB295C6173E0FC20054BBD3 /* main.m */; };
-		BAB295E5173E15860054BBD3 /* FeedStore-info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BAB295E4173E15860054BBD3 /* FeedStore-info.plist */; };
+		BAB295E5173E15860054BBD3 /* FeedStore-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BAB295E4173E15860054BBD3 /* FeedStore-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,13 +23,13 @@
 		BA83C01E173E2220004F8695 /* FSApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSApplication.m; sourceTree = "<group>"; };
 		BA83C029173E22FB004F8695 /* UIColor+.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+.h"; sourceTree = "<group>"; };
 		BA83C02A173E2343004F8695 /* prefix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = prefix.h; sourceTree = "<group>"; };
+		BA83C032173E2741004F8695 /* FeedStore-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FeedStore-Prefix.pch"; sourceTree = "<group>"; };
 		BAB295B7173E0FC20054BBD3 /* FeedStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FeedStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAB295BA173E0FC20054BBD3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BAB295BC173E0FC20054BBD3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BAB295BE173E0FC20054BBD3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		BAB295C6173E0FC20054BBD3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = src/main.m; sourceTree = "<group>"; };
-		BAB295E3173E15630054BBD3 /* FeedStore-prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "FeedStore-prefix.pch"; path = "src/FeedStore-prefix.pch"; sourceTree = "<group>"; };
-		BAB295E4173E15860054BBD3 /* FeedStore-info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "FeedStore-info.plist"; sourceTree = "<group>"; };
+		BAB295C6173E0FC20054BBD3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BAB295E4173E15860054BBD3 /* FeedStore-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "FeedStore-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,8 +117,6 @@
 			isa = PBXGroup;
 			children = (
 				BAB295C0173E0FC20054BBD3 /* src */,
-				BAB295E3173E15630054BBD3 /* FeedStore-prefix.pch */,
-				BAB295C6173E0FC20054BBD3 /* main.m */,
 				BAB295DD173E149E0054BBD3 /* res */,
 				BAB295B9173E0FC20054BBD3 /* Frameworks */,
 				BAB295B8173E0FC20054BBD3 /* Products */,
@@ -150,6 +148,8 @@
 			children = (
 				BA83C01B173E2220004F8695 /* fs */,
 				BA83C027173E224B004F8695 /* mx */,
+				BA83C032173E2741004F8695 /* FeedStore-Prefix.pch */,
+				BAB295C6173E0FC20054BBD3 /* main.m */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -159,7 +159,7 @@
 			children = (
 				BAB295DE173E14B00054BBD3 /* icons */,
 				BAB295DF173E14B00054BBD3 /* images */,
-				BAB295E4173E15860054BBD3 /* FeedStore-info.plist */,
+				BAB295E4173E15860054BBD3 /* FeedStore-Info.plist */,
 			);
 			path = res;
 			sourceTree = "<group>";
@@ -232,7 +232,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAB295E5173E15860054BBD3 /* FeedStore-info.plist in Resources */,
+				BAB295E5173E15860054BBD3 /* FeedStore-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
