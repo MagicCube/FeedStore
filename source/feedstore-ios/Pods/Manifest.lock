@@ -1,0 +1,22 @@
+PODS:
+  - AFNetworking (1.2.1)
+  - DTCoreText (1.5.1):
+    - DTFoundation/Core (~> 1.2.0)
+    - DTFoundation/DTHMLParser (~> 1.2.0)
+    - DTFoundation/UIKit (~> 1.2.0)
+  - DTFoundation/Core (1.2.0)
+  - DTFoundation/DTHMLParser (1.2.0):
+    - DTFoundation/Core
+  - DTFoundation/UIKit (1.2.0):
+    - DTFoundation/Core
+
+DEPENDENCIES:
+  - AFNetworking
+  - DTCoreText
+
+SPEC CHECKSUMS:
+  AFNetworking: 616da0028916ce296f5c3cef74e5552eb4e10e13
+  DTCoreText: 0222a2a47076f8afe3a6c789ef9d288391f13b33
+  DTFoundation: e73ab1f43b86b37664a3f0148430d58da1eab713
+
+COCOAPODS: 0.18.1
