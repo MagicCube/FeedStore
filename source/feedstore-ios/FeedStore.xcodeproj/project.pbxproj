@@ -63,11 +63,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA4BF3DD173E3C1F00A91421 /* store */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = store;
+			sourceTree = "<group>";
+		};
 		BA83C01B173E2220004F8695 /* fs */ = {
 			isa = PBXGroup;
 			children = (
 				BA83C01C173E2220004F8695 /* app */,
-				BA83C01F173E2220004F8695 /* core */,
+				BA4BF3DD173E3C1F00A91421 /* store */,
 				BA83C022173E2220004F8695 /* ui */,
 			);
 			path = fs;
@@ -80,13 +87,6 @@
 				BA83C01E173E2220004F8695 /* FSApplication.m */,
 			);
 			path = app;
-			sourceTree = "<group>";
-		};
-		BA83C01F173E2220004F8695 /* core */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = core;
 			sourceTree = "<group>";
 		};
 		BA83C022173E2220004F8695 /* ui */ = {
