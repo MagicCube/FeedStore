@@ -6,8 +6,8 @@
 //  Copyright (c) 2013年 MagicCube. All rights reserved.
 //
 
+#import "FSFeedCollectionViewController.h"
 #import "FSRootViewController.h"
-#import "FSNavigationController.h"
 
 @implementation FSRootViewController
 
@@ -27,7 +27,8 @@
 {
     [super loadView];
     
-    _navigationController = [[FSNavigationController alloc] init];
+    FSFeedCollectionViewController *collectionViewController = [[FSFeedCollectionViewController alloc] init];
+    _navigationController = [[FSNavigationController alloc] initWithRootViewController:collectionViewController];
     _navigationController.view.frame = CGRectMake(0, 0, [UIScreen mainScreen].applicationFrame.size.width, [UIScreen mainScreen].applicationFrame.size.height);
     [self.view addSubview:_navigationController.view];
 }

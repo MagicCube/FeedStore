@@ -29,6 +29,9 @@
 		BA59826A173E56B2002A181E /* UIDevice+iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = BA598269173E56B2002A181E /* UIDevice+iPad.m */; };
 		BA59826D173E583E002A181E /* FSCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA59826C173E583E002A181E /* FSCollectionViewController.m */; };
 		BA598270173E5A65002A181E /* FSFeedCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA59826F173E5A65002A181E /* FSFeedCollectionViewController.m */; };
+		BA598273173E6A29002A181E /* FSFeedCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA598272173E6A28002A181E /* FSFeedCollectionViewCell.m */; };
+		BA7A6C12173E75DB00BF2386 /* PSNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7A6C11173E75DB00BF2386 /* PSNavigationController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		BA7A6C15173E796D00BF2386 /* FSFeedDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7A6C14173E796D00BF2386 /* FSFeedDetailViewController.m */; };
 		BA83C026173E2220004F8695 /* FSApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = BA83C01E173E2220004F8695 /* FSApplication.m */; };
 		BAB295BB173E0FC20054BBD3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB295BA173E0FC20054BBD3 /* UIKit.framework */; };
 		BAB295BD173E0FC20054BBD3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB295BC173E0FC20054BBD3 /* Foundation.framework */; };
@@ -68,6 +71,12 @@
 		BA59826C173E583E002A181E /* FSCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCollectionViewController.m; sourceTree = "<group>"; };
 		BA59826E173E5A65002A181E /* FSFeedCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSFeedCollectionViewController.h; sourceTree = "<group>"; };
 		BA59826F173E5A65002A181E /* FSFeedCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSFeedCollectionViewController.m; sourceTree = "<group>"; };
+		BA598271173E6A28002A181E /* FSFeedCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSFeedCollectionViewCell.h; sourceTree = "<group>"; };
+		BA598272173E6A28002A181E /* FSFeedCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSFeedCollectionViewCell.m; sourceTree = "<group>"; };
+		BA7A6C10173E75DB00BF2386 /* PSNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSNavigationController.h; sourceTree = "<group>"; };
+		BA7A6C11173E75DB00BF2386 /* PSNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSNavigationController.m; sourceTree = "<group>"; };
+		BA7A6C13173E796D00BF2386 /* FSFeedDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSFeedDetailViewController.h; sourceTree = "<group>"; };
+		BA7A6C14173E796D00BF2386 /* FSFeedDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSFeedDetailViewController.m; sourceTree = "<group>"; };
 		BA83C01D173E2220004F8695 /* FSApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSApplication.h; sourceTree = "<group>"; };
 		BA83C01E173E2220004F8695 /* FSApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSApplication.m; sourceTree = "<group>"; };
 		BA83C029173E22FB004F8695 /* UIColor+.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+.h"; sourceTree = "<group>"; };
@@ -126,8 +135,12 @@
 			children = (
 				BA59826B173E583E002A181E /* FSCollectionViewController.h */,
 				BA59826C173E583E002A181E /* FSCollectionViewController.m */,
+				BA598271173E6A28002A181E /* FSFeedCollectionViewCell.h */,
+				BA598272173E6A28002A181E /* FSFeedCollectionViewCell.m */,
 				BA59826E173E5A65002A181E /* FSFeedCollectionViewController.h */,
 				BA59826F173E5A65002A181E /* FSFeedCollectionViewController.m */,
+				BA7A6C13173E796D00BF2386 /* FSFeedDetailViewController.h */,
+				BA7A6C14173E796D00BF2386 /* FSFeedDetailViewController.m */,
 				BA598256173E4641002A181E /* FSNavigationController.h */,
 				BA598257173E4641002A181E /* FSNavigationController.m */,
 				BA598253173E44D5002A181E /* FSRootViewController.h */,
@@ -143,6 +156,8 @@
 				BA59825F173E54AB002A181E /* PSCollectionView.m */,
 				BA598260173E54AB002A181E /* PSCollectionViewCell.h */,
 				BA598261173E54AB002A181E /* PSCollectionViewCell.m */,
+				BA7A6C10173E75DB00BF2386 /* PSNavigationController.h */,
+				BA7A6C11173E75DB00BF2386 /* PSNavigationController.m */,
 			);
 			path = ps;
 			sourceTree = "<group>";
@@ -374,6 +389,9 @@
 				BA59826A173E56B2002A181E /* UIDevice+iPad.m in Sources */,
 				BA59826D173E583E002A181E /* FSCollectionViewController.m in Sources */,
 				BA598270173E5A65002A181E /* FSFeedCollectionViewController.m in Sources */,
+				BA598273173E6A29002A181E /* FSFeedCollectionViewCell.m in Sources */,
+				BA7A6C12173E75DB00BF2386 /* PSNavigationController.m in Sources */,
+				BA7A6C15173E796D00BF2386 /* FSFeedDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

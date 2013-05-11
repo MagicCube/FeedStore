@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PSNavigationController.h"
 
-@interface FSNavigationController : UINavigationController
+@interface FSNavigationController : PSNavigationController
+
++ (FSNavigationController *)sharedInstance;
 
 @end

@@ -40,7 +40,8 @@
 - (void)prepareForReuse {
 }
 
-- (void)collectionView:(PSCollectionView *)collectionView fillCellWithObject:(id)object atIndex:(NSInteger)index {
+- (void)collectionView:(PSCollectionView *)collectionView fillCellWithObject:(id)object atIndex:(NSInteger)index
+{
     self.collectionView = collectionView;
     self.object = object;
     self.index = index;
