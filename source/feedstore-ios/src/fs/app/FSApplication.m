@@ -7,10 +7,13 @@
 //
 
 #import "FSApplication.h"
+#import "../ui/FSRootViewController.h"
 
 @implementation FSApplication
 
 static FSApplication *__sharedApplication = nil;
+
+@synthesize rootViewController = _rootViewController;
 
 - (id)init
 {
@@ -27,11 +30,28 @@ static FSApplication *__sharedApplication = nil;
     return __sharedApplication;
 }
 
+- (FSRootViewController *)rootViewController
+{
+    @synchronized (self)
+    {
+        if (_rootViewController == nil)
+        {
+            _rootViewController = [[FSRootViewController alloc] init];
+        }
+    }
+    return _rootViewController;
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.backgroundColor = UIColorRGB(0, 255, 0);
+    self.window.backgroundColor = [UIColor blackColor];
     [self.window makeKeyAndVisible];
+    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackTranslucent];
+    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:YES];
+    self.window.rootViewController = self.rootViewController;
+    
     return YES;
 }
 
