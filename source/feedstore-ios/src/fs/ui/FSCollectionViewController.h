@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "../../ps/PSCollectionView.h"
+#import "../../ps/ui/PSCollectionView.h"
 
 @interface FSCollectionViewController : UIViewController <PSCollectionViewDelegate, PSCollectionViewDataSource>
 

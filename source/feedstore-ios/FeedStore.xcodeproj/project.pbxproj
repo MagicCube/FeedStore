@@ -24,13 +24,13 @@
 		BA598258173E4641002A181E /* FSNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA598257173E4641002A181E /* FSNavigationController.m */; };
 		BA59825A173E4FBD002A181E /* navigation-bar-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = BA598259173E4FBD002A181E /* navigation-bar-bg.png */; };
 		BA59825C173E502D002A181E /* navigation-bar-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA59825B173E502D002A181E /* navigation-bar-bg@2x.png */; };
-		BA598262173E54AB002A181E /* PSCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA59825F173E54AB002A181E /* PSCollectionView.m */; };
-		BA598263173E54AB002A181E /* PSCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA598261173E54AB002A181E /* PSCollectionViewCell.m */; };
 		BA59826A173E56B2002A181E /* UIDevice+iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = BA598269173E56B2002A181E /* UIDevice+iPad.m */; };
 		BA59826D173E583E002A181E /* FSCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA59826C173E583E002A181E /* FSCollectionViewController.m */; };
 		BA598270173E5A65002A181E /* FSFeedCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA59826F173E5A65002A181E /* FSFeedCollectionViewController.m */; };
 		BA598273173E6A29002A181E /* FSFeedCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA598272173E6A28002A181E /* FSFeedCollectionViewCell.m */; };
-		BA7A6C12173E75DB00BF2386 /* PSNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7A6C11173E75DB00BF2386 /* PSNavigationController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		BA753D21173E872F00205BA2 /* PSCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA753D1C173E872F00205BA2 /* PSCollectionView.m */; };
+		BA753D22173E872F00205BA2 /* PSCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA753D1E173E872F00205BA2 /* PSCollectionViewCell.m */; };
+		BA753D23173E872F00205BA2 /* PSNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA753D20173E872F00205BA2 /* PSNavigationController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		BA7A6C15173E796D00BF2386 /* FSFeedDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7A6C14173E796D00BF2386 /* FSFeedDetailViewController.m */; };
 		BA83C026173E2220004F8695 /* FSApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = BA83C01E173E2220004F8695 /* FSApplication.m */; };
 		BAB295BB173E0FC20054BBD3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB295BA173E0FC20054BBD3 /* UIKit.framework */; };
@@ -61,10 +61,6 @@
 		BA598257173E4641002A181E /* FSNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSNavigationController.m; sourceTree = "<group>"; };
 		BA598259173E4FBD002A181E /* navigation-bar-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigation-bar-bg.png"; sourceTree = "<group>"; };
 		BA59825B173E502D002A181E /* navigation-bar-bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigation-bar-bg@2x.png"; sourceTree = "<group>"; };
-		BA59825E173E54AB002A181E /* PSCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSCollectionView.h; sourceTree = "<group>"; };
-		BA59825F173E54AB002A181E /* PSCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSCollectionView.m; sourceTree = "<group>"; };
-		BA598260173E54AB002A181E /* PSCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSCollectionViewCell.h; sourceTree = "<group>"; };
-		BA598261173E54AB002A181E /* PSCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSCollectionViewCell.m; sourceTree = "<group>"; };
 		BA598268173E56B2002A181E /* UIDevice+iPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+iPad.h"; sourceTree = "<group>"; };
 		BA598269173E56B2002A181E /* UIDevice+iPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+iPad.m"; sourceTree = "<group>"; };
 		BA59826B173E583E002A181E /* FSCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCollectionViewController.h; sourceTree = "<group>"; };
@@ -73,8 +69,12 @@
 		BA59826F173E5A65002A181E /* FSFeedCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSFeedCollectionViewController.m; sourceTree = "<group>"; };
 		BA598271173E6A28002A181E /* FSFeedCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSFeedCollectionViewCell.h; sourceTree = "<group>"; };
 		BA598272173E6A28002A181E /* FSFeedCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSFeedCollectionViewCell.m; sourceTree = "<group>"; };
-		BA7A6C10173E75DB00BF2386 /* PSNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSNavigationController.h; sourceTree = "<group>"; };
-		BA7A6C11173E75DB00BF2386 /* PSNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSNavigationController.m; sourceTree = "<group>"; };
+		BA753D1B173E872F00205BA2 /* PSCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSCollectionView.h; sourceTree = "<group>"; };
+		BA753D1C173E872F00205BA2 /* PSCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSCollectionView.m; sourceTree = "<group>"; };
+		BA753D1D173E872F00205BA2 /* PSCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSCollectionViewCell.h; sourceTree = "<group>"; };
+		BA753D1E173E872F00205BA2 /* PSCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSCollectionViewCell.m; sourceTree = "<group>"; };
+		BA753D1F173E872F00205BA2 /* PSNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSNavigationController.h; sourceTree = "<group>"; };
+		BA753D20173E872F00205BA2 /* PSNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSNavigationController.m; sourceTree = "<group>"; };
 		BA7A6C13173E796D00BF2386 /* FSFeedDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSFeedDetailViewController.h; sourceTree = "<group>"; };
 		BA7A6C14173E796D00BF2386 /* FSFeedDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSFeedDetailViewController.m; sourceTree = "<group>"; };
 		BA83C01D173E2220004F8695 /* FSApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSApplication.h; sourceTree = "<group>"; };
@@ -152,14 +152,22 @@
 		BA59825D173E54AB002A181E /* ps */ = {
 			isa = PBXGroup;
 			children = (
-				BA59825E173E54AB002A181E /* PSCollectionView.h */,
-				BA59825F173E54AB002A181E /* PSCollectionView.m */,
-				BA598260173E54AB002A181E /* PSCollectionViewCell.h */,
-				BA598261173E54AB002A181E /* PSCollectionViewCell.m */,
-				BA7A6C10173E75DB00BF2386 /* PSNavigationController.h */,
-				BA7A6C11173E75DB00BF2386 /* PSNavigationController.m */,
+				BA753D1A173E872F00205BA2 /* ui */,
 			);
 			path = ps;
+			sourceTree = "<group>";
+		};
+		BA753D1A173E872F00205BA2 /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				BA753D1B173E872F00205BA2 /* PSCollectionView.h */,
+				BA753D1C173E872F00205BA2 /* PSCollectionView.m */,
+				BA753D1D173E872F00205BA2 /* PSCollectionViewCell.h */,
+				BA753D1E173E872F00205BA2 /* PSCollectionViewCell.m */,
+				BA753D1F173E872F00205BA2 /* PSNavigationController.h */,
+				BA753D20173E872F00205BA2 /* PSNavigationController.m */,
+			);
+			path = ui;
 			sourceTree = "<group>";
 		};
 		BA83C01B173E2220004F8695 /* fs */ = {
@@ -384,14 +392,14 @@
 				BA83C026173E2220004F8695 /* FSApplication.m in Sources */,
 				BA598255173E44D5002A181E /* FSRootViewController.m in Sources */,
 				BA598258173E4641002A181E /* FSNavigationController.m in Sources */,
-				BA598262173E54AB002A181E /* PSCollectionView.m in Sources */,
-				BA598263173E54AB002A181E /* PSCollectionViewCell.m in Sources */,
 				BA59826A173E56B2002A181E /* UIDevice+iPad.m in Sources */,
 				BA59826D173E583E002A181E /* FSCollectionViewController.m in Sources */,
 				BA598270173E5A65002A181E /* FSFeedCollectionViewController.m in Sources */,
 				BA598273173E6A29002A181E /* FSFeedCollectionViewCell.m in Sources */,
-				BA7A6C12173E75DB00BF2386 /* PSNavigationController.m in Sources */,
 				BA7A6C15173E796D00BF2386 /* FSFeedDetailViewController.m in Sources */,
+				BA753D21173E872F00205BA2 /* PSCollectionView.m in Sources */,
+				BA753D22173E872F00205BA2 /* PSCollectionViewCell.m in Sources */,
+				BA753D23173E872F00205BA2 /* PSNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

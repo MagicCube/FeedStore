@@ -27,19 +27,4 @@ static FSNavigationController *__sharedNavigationController = nil;
     return __sharedNavigationController;
 }
 
-- (void)loadView
-{
-    [super loadView];
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-}
-
 @end
