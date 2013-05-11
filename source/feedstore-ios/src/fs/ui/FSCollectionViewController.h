@@ -13,6 +13,4 @@
 
 @property (strong, nonatomic) PSCollectionView *collectionView;
 
-- (void)reloadData;
-
 @end

@@ -8,7 +8,7 @@
 
 #import "PSCollectionViewCell.h"
 
-@interface FSFeedCollectionViewCell : PSCollectionViewCell
+@interface FSEntryCollectionViewCell : PSCollectionViewCell
 
 @property (strong, nonatomic) UILabel *textLabel;
 

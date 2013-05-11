@@ -6,9 +6,9 @@
 //  Copyright (c) 2013年 MagicCube. All rights reserved.
 //
 
-#import "FSFeedDetailViewController.h"
+#import "FSEntryDetailSceneController.h"
 
-@implementation FSFeedDetailViewController
+@implementation FSEntryDetailSceneController
 
 - (id)init
 {
@@ -19,12 +19,12 @@
     return self;
 }
 
-+ (FSFeedDetailViewController *)sharedInstance
++ (FSEntryDetailSceneController *)sharedInstance
 {
     static dispatch_once_t pred;
-    static FSFeedDetailViewController *shared = nil;
+    static FSEntryDetailSceneController *shared = nil;
     dispatch_once(&pred, ^{
-        shared = [[FSFeedDetailViewController alloc] init];
+        shared = [[FSEntryDetailSceneController alloc] init];
     });
     return shared;
 }
@@ -35,12 +35,6 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     self.view.layer.cornerRadius = 3;
-}
-
-
-- (void)_onclick
-{
-    [[FSNavigationController sharedInstance] popViewControllerAnimated:YES];
 }
 
 @end

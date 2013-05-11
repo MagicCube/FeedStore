@@ -77,32 +77,4 @@
     return 128;
 }
 
-
-- (void)reloadData
-{
-    [self.collectionView reloadData];
-}
-
-
-
-
-
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
-{
-    int deltaY = scrollView.contentSize.height - scrollView.contentOffset.y - scrollView.frame.size.height;
-    
-    if (deltaY <= 20)
-    {
-        [self reloadData];
-    }
-}
-
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
-{
-    if (!decelerate)
-    {
-        [self scrollViewDidEndDecelerating:scrollView];
-    }
-}
-
 @end

@@ -26,12 +26,13 @@
 		BA59825C173E502D002A181E /* navigation-bar-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA59825B173E502D002A181E /* navigation-bar-bg@2x.png */; };
 		BA59826A173E56B2002A181E /* UIDevice+iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = BA598269173E56B2002A181E /* UIDevice+iPad.m */; };
 		BA59826D173E583E002A181E /* FSCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA59826C173E583E002A181E /* FSCollectionViewController.m */; };
-		BA598270173E5A65002A181E /* FSFeedCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA59826F173E5A65002A181E /* FSFeedCollectionViewController.m */; };
-		BA598273173E6A29002A181E /* FSFeedCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA598272173E6A28002A181E /* FSFeedCollectionViewCell.m */; };
+		BA598270173E5A65002A181E /* FSEntryCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA59826F173E5A65002A181E /* FSEntryCollectionViewController.m */; };
+		BA598273173E6A29002A181E /* FSEntryCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA598272173E6A28002A181E /* FSEntryCollectionViewCell.m */; };
 		BA753D21173E872F00205BA2 /* PSCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA753D1C173E872F00205BA2 /* PSCollectionView.m */; };
 		BA753D22173E872F00205BA2 /* PSCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA753D1E173E872F00205BA2 /* PSCollectionViewCell.m */; };
 		BA753D23173E872F00205BA2 /* PSNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA753D20173E872F00205BA2 /* PSNavigationController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		BA7A6C15173E796D00BF2386 /* FSFeedDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7A6C14173E796D00BF2386 /* FSFeedDetailViewController.m */; };
+		BA753D2A173E96C300205BA2 /* FSEntryCollectionSceneController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA753D29173E96C300205BA2 /* FSEntryCollectionSceneController.m */; };
+		BA7A6C15173E796D00BF2386 /* FSEntryDetailSceneController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7A6C14173E796D00BF2386 /* FSEntryDetailSceneController.m */; };
 		BA83C026173E2220004F8695 /* FSApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = BA83C01E173E2220004F8695 /* FSApplication.m */; };
 		BAB295BB173E0FC20054BBD3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB295BA173E0FC20054BBD3 /* UIKit.framework */; };
 		BAB295BD173E0FC20054BBD3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB295BC173E0FC20054BBD3 /* Foundation.framework */; };
@@ -65,18 +66,20 @@
 		BA598269173E56B2002A181E /* UIDevice+iPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+iPad.m"; sourceTree = "<group>"; };
 		BA59826B173E583E002A181E /* FSCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCollectionViewController.h; sourceTree = "<group>"; };
 		BA59826C173E583E002A181E /* FSCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCollectionViewController.m; sourceTree = "<group>"; };
-		BA59826E173E5A65002A181E /* FSFeedCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSFeedCollectionViewController.h; sourceTree = "<group>"; };
-		BA59826F173E5A65002A181E /* FSFeedCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSFeedCollectionViewController.m; sourceTree = "<group>"; };
-		BA598271173E6A28002A181E /* FSFeedCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSFeedCollectionViewCell.h; sourceTree = "<group>"; };
-		BA598272173E6A28002A181E /* FSFeedCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSFeedCollectionViewCell.m; sourceTree = "<group>"; };
+		BA59826E173E5A65002A181E /* FSEntryCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSEntryCollectionViewController.h; sourceTree = "<group>"; };
+		BA59826F173E5A65002A181E /* FSEntryCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSEntryCollectionViewController.m; sourceTree = "<group>"; };
+		BA598271173E6A28002A181E /* FSEntryCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSEntryCollectionViewCell.h; sourceTree = "<group>"; };
+		BA598272173E6A28002A181E /* FSEntryCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSEntryCollectionViewCell.m; sourceTree = "<group>"; };
 		BA753D1B173E872F00205BA2 /* PSCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSCollectionView.h; sourceTree = "<group>"; };
 		BA753D1C173E872F00205BA2 /* PSCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSCollectionView.m; sourceTree = "<group>"; };
 		BA753D1D173E872F00205BA2 /* PSCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSCollectionViewCell.h; sourceTree = "<group>"; };
 		BA753D1E173E872F00205BA2 /* PSCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSCollectionViewCell.m; sourceTree = "<group>"; };
 		BA753D1F173E872F00205BA2 /* PSNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSNavigationController.h; sourceTree = "<group>"; };
 		BA753D20173E872F00205BA2 /* PSNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSNavigationController.m; sourceTree = "<group>"; };
-		BA7A6C13173E796D00BF2386 /* FSFeedDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSFeedDetailViewController.h; sourceTree = "<group>"; };
-		BA7A6C14173E796D00BF2386 /* FSFeedDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSFeedDetailViewController.m; sourceTree = "<group>"; };
+		BA753D28173E96C300205BA2 /* FSEntryCollectionSceneController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSEntryCollectionSceneController.h; sourceTree = "<group>"; };
+		BA753D29173E96C300205BA2 /* FSEntryCollectionSceneController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSEntryCollectionSceneController.m; sourceTree = "<group>"; };
+		BA7A6C13173E796D00BF2386 /* FSEntryDetailSceneController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSEntryDetailSceneController.h; sourceTree = "<group>"; };
+		BA7A6C14173E796D00BF2386 /* FSEntryDetailSceneController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSEntryDetailSceneController.m; sourceTree = "<group>"; };
 		BA83C01D173E2220004F8695 /* FSApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSApplication.h; sourceTree = "<group>"; };
 		BA83C01E173E2220004F8695 /* FSApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSApplication.m; sourceTree = "<group>"; };
 		BA83C029173E22FB004F8695 /* UIColor+.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+.h"; sourceTree = "<group>"; };
@@ -133,18 +136,9 @@
 		BA598252173E44C3002A181E /* ui */ = {
 			isa = PBXGroup;
 			children = (
-				BA59826B173E583E002A181E /* FSCollectionViewController.h */,
-				BA59826C173E583E002A181E /* FSCollectionViewController.m */,
-				BA598271173E6A28002A181E /* FSFeedCollectionViewCell.h */,
-				BA598272173E6A28002A181E /* FSFeedCollectionViewCell.m */,
-				BA59826E173E5A65002A181E /* FSFeedCollectionViewController.h */,
-				BA59826F173E5A65002A181E /* FSFeedCollectionViewController.m */,
-				BA7A6C13173E796D00BF2386 /* FSFeedDetailViewController.h */,
-				BA7A6C14173E796D00BF2386 /* FSFeedDetailViewController.m */,
-				BA598256173E4641002A181E /* FSNavigationController.h */,
-				BA598257173E4641002A181E /* FSNavigationController.m */,
-				BA598253173E44D5002A181E /* FSRootViewController.h */,
-				BA598254173E44D5002A181E /* FSRootViewController.m */,
+				BA753D24173E956900205BA2 /* nav */,
+				BA753D25173E957D00205BA2 /* scene */,
+				BA753D27173E962700205BA2 /* view */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -168,6 +162,41 @@
 				BA753D20173E872F00205BA2 /* PSNavigationController.m */,
 			);
 			path = ui;
+			sourceTree = "<group>";
+		};
+		BA753D24173E956900205BA2 /* nav */ = {
+			isa = PBXGroup;
+			children = (
+				BA598256173E4641002A181E /* FSNavigationController.h */,
+				BA598257173E4641002A181E /* FSNavigationController.m */,
+				BA598253173E44D5002A181E /* FSRootViewController.h */,
+				BA598254173E44D5002A181E /* FSRootViewController.m */,
+			);
+			name = nav;
+			sourceTree = "<group>";
+		};
+		BA753D25173E957D00205BA2 /* scene */ = {
+			isa = PBXGroup;
+			children = (
+				BA7A6C13173E796D00BF2386 /* FSEntryDetailSceneController.h */,
+				BA7A6C14173E796D00BF2386 /* FSEntryDetailSceneController.m */,
+				BA753D28173E96C300205BA2 /* FSEntryCollectionSceneController.h */,
+				BA753D29173E96C300205BA2 /* FSEntryCollectionSceneController.m */,
+			);
+			name = scene;
+			sourceTree = "<group>";
+		};
+		BA753D27173E962700205BA2 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				BA59826B173E583E002A181E /* FSCollectionViewController.h */,
+				BA59826C173E583E002A181E /* FSCollectionViewController.m */,
+				BA598271173E6A28002A181E /* FSEntryCollectionViewCell.h */,
+				BA598272173E6A28002A181E /* FSEntryCollectionViewCell.m */,
+				BA59826E173E5A65002A181E /* FSEntryCollectionViewController.h */,
+				BA59826F173E5A65002A181E /* FSEntryCollectionViewController.m */,
+			);
+			name = view;
 			sourceTree = "<group>";
 		};
 		BA83C01B173E2220004F8695 /* fs */ = {
@@ -394,12 +423,13 @@
 				BA598258173E4641002A181E /* FSNavigationController.m in Sources */,
 				BA59826A173E56B2002A181E /* UIDevice+iPad.m in Sources */,
 				BA59826D173E583E002A181E /* FSCollectionViewController.m in Sources */,
-				BA598270173E5A65002A181E /* FSFeedCollectionViewController.m in Sources */,
-				BA598273173E6A29002A181E /* FSFeedCollectionViewCell.m in Sources */,
-				BA7A6C15173E796D00BF2386 /* FSFeedDetailViewController.m in Sources */,
+				BA598270173E5A65002A181E /* FSEntryCollectionViewController.m in Sources */,
+				BA598273173E6A29002A181E /* FSEntryCollectionViewCell.m in Sources */,
+				BA7A6C15173E796D00BF2386 /* FSEntryDetailSceneController.m in Sources */,
 				BA753D21173E872F00205BA2 /* PSCollectionView.m in Sources */,
 				BA753D22173E872F00205BA2 /* PSCollectionViewCell.m in Sources */,
 				BA753D23173E872F00205BA2 /* PSNavigationController.m in Sources */,
+				BA753D2A173E96C300205BA2 /* FSEntryCollectionSceneController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

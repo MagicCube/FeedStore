@@ -6,9 +6,9 @@
 //  Copyright (c) 2013年 MagicCube. All rights reserved.
 //
 
-#import "FSFeedCollectionViewCell.h"
+#import "FSEntryCollectionViewCell.h"
 
-@implementation FSFeedCollectionViewCell
+@implementation FSEntryCollectionViewCell
 
 - (id)init
 {

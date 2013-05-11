@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FSFeedDetailViewController : UIViewController
+@interface FSEntryDetailSceneController : UIViewController
 
-+ (FSFeedDetailViewController *)sharedInstance;
++ (FSEntryDetailSceneController *)sharedInstance;
 
 @end

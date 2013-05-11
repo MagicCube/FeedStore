@@ -8,8 +8,8 @@
 
 #import "FSCollectionViewController.h"
 
-@interface FSFeedCollectionViewController : FSCollectionViewController
+@interface FSEntryCollectionViewController : FSCollectionViewController
 
-@property (strong, nonatomic) NSMutableArray *items;
+@property (strong, nonatomic) NSMutableArray *entries;
 
 @end
