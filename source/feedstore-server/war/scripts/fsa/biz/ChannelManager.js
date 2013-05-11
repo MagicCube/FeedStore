@@ -4,8 +4,6 @@ fsa.biz.ChannelManagerClass = function()
 {
     var me = $extend(MXComponent);
     
-    
-    
     return me.endOfClass(arguments);
 };
 

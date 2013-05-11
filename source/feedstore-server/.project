@@ -35,10 +35,17 @@
 			<arguments>
 			</arguments>
 		</buildCommand>
+		<buildCommand>
+			<name>org.magiccube.mxtool.eclipse.builders.mxBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
 	</buildSpec>
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>com.google.appengine.eclipse.core.gaeNature</nature>
 		<nature>org.eclipse.wst.common.project.facet.core.nature</nature>
+		<nature>org.magiccube.mxtool.eclipse.builders.mxNature</nature>
+		<nature>org.magiccube.mxtool.eclipse.builders.mxNature</nature>
 	</natures>
 </projectDescription>
