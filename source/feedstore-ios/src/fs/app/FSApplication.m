@@ -10,11 +10,27 @@
 
 @implementation FSApplication
 
+static FSApplication *__sharedApplication = nil;
+
+- (id)init
+{
+    self = [super init];
+    if (self)
+    {
+        __sharedApplication = self;
+    }
+    return self;
+}
+
++ (FSApplication *)sharedInstance
+{
+    return __sharedApplication;
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.backgroundColor = UIColorRGB(0, 255, 0);
     [self.window makeKeyAndVisible];
     return YES;
 }
