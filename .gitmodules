@@ -1,3 +1,0 @@
-[submodule "source/feedstore-server/war/scripts/mx"]
-	path = source/feedstore-server/war/scripts/mx
-	url = https://github.com/MagicCube/mxframework-core.git
