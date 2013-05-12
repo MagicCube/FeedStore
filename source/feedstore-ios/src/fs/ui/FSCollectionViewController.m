@@ -7,6 +7,8 @@
 //
 
 #import "FSCollectionViewController.h"
+#import "FSCollectionHeaderView.h"
+#import "FSCollectionFooterView.h"
 #import "PSCollectionView.h"
 
 @implementation FSCollectionViewController
@@ -44,6 +46,15 @@
     _collectionView.collectionViewDataSource = self;
     _collectionView.collectionViewDelegate = self;
     self.view = _collectionView;
+    
+    
+    FSCollectionHeaderView *headView = [[FSCollectionHeaderView alloc] init];
+    
+    _collectionView.headerView = headView;
+    
+    FSCollectionFooterView *footerView = [[FSCollectionFooterView alloc] init];
+    footerView.frame = CGRectMake(0, 0, 0, 40);
+    _collectionView.footerView = footerView;
 }
 
 

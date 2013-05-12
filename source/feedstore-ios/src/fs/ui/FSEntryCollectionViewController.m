@@ -29,16 +29,6 @@
 {
     [super loadView];
     
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    button.frame = CGRectMake(0, -40, 0, 80);
-    [button setTitle:@"下拉刷新" forState:UIControlStateNormal];
-    self.collectionView.headerView = button;
-    
-    button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    button.frame = CGRectMake(0, 0, 0, 40);
-    [button setTitle:@"上拉继续加载" forState:UIControlStateNormal];
-    self.collectionView.footerView = button;
-    
     [self loadEntries];
 }
 
@@ -78,7 +68,7 @@
 {
     for (NSInteger i = 0; i < 20; i++)
     {
-        NSDictionary *entry = @{ @"height": [NSNumber numberWithInt:(128 + arc4random() % 64)] };
+        NSDictionary *entry = @{ @"height": [NSNumber numberWithInt:(192 + arc4random() % 150)] };
         [_entries addObject:entry];
     }
     

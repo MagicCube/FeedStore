@@ -41,6 +41,8 @@
     self.view.layer.cornerRadius = 3;
     
     _collectionViewController = [[FSEntryCollectionViewController alloc] init];
+    _collectionViewController.view.autoresizesSubviews = YES;
+    _collectionViewController.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:_collectionViewController.view];
 }
 
