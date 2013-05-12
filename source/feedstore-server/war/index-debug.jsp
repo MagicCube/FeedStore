@@ -4,8 +4,7 @@
 <head>
 <title></title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<script type="text/javascript" src="scripts/lib/jquery/jquery.js"></script>
-<script type="text/javascript" src="scripts/mx/min.js"></script>
+<script type="text/javascript" src="scripts/mx/debug.js"></script>
 </head>
 
 <body>
