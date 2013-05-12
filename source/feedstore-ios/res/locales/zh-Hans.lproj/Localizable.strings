@@ -1,0 +1,19 @@
+"a second ago" = "1 秒钟前";
+"%d seconds ago" = "%d 秒钟前";
+"a minute ago" = "1 分钟前";
+"%d minutes ago" = "%d 分钟前";
+"an hour ago" = "1 小时前";
+"%d hours ago" = "%d 小时前";
+"yesterday" = "昨天";
+"%d days ago" = "%d 天前";
+"a month ago" = "1 个月前";
+"%d months ago" = "%d 个月前";
+"one year ago" = "去年";
+"%d years ago" = "%d 年前";
+
+"Pull to refresh" = "下拉可以刷新...";
+"Release to refresh" = "松开即可刷新...";
+"Updating" = "正在更新中...";
+"Loading" = "正在加载中...";
+"Last updated at" = "最后更新于 %@";
+"Not updated yet" = "尚未更新";

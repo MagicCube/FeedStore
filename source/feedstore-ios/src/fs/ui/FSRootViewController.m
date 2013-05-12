@@ -33,4 +33,9 @@
     [self.view addSubview:_navigationController.view];
 }
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+{
+    return toInterfaceOrientation != UIInterfaceOrientationPortraitUpsideDown;
+}
+
 @end

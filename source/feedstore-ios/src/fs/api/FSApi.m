@@ -15,7 +15,7 @@
     static NSURL *baseURL = nil;
     if (baseURL == nil)
     {
-        NSString *baseURLString = [NSString stringWithFormat:@"https://%@/api", @"feedstore-01.appspot.com"];
+        NSString *baseURLString = [NSString stringWithFormat:@"%@://%@/api", [FSConfig settingWithKey:@"fs.api.httpProtocol"], [FSConfig settingWithKey:@"fs.api.host"]];
         baseURL = [NSURL URLWithString:baseURLString];
     }
     return baseURL;

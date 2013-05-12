@@ -10,4 +10,7 @@
 
 @interface FSCollectionHeaderView : UIView
 
+@property (readonly, strong, nonatomic) UILabel *hintLabel;
+@property (readonly, strong, nonatomic) UILabel *lastUpateTimeLabel;
+
 @end

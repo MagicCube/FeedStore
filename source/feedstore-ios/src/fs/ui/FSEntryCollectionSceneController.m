@@ -37,7 +37,7 @@
 {
     [super loadView];
     
-    self.view.backgroundColor = UIColorHex(0xdbdfe3);
+    self.view.backgroundColor = rgbhex(0xdbdfe3);
     self.view.layer.cornerRadius = 3;
     
     _collectionViewController = [[FSEntryCollectionViewController alloc] init];

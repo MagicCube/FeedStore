@@ -13,7 +13,12 @@
 
 @implementation FSCollectionViewController
 
+@synthesize updating = _updating;
+@synthesize loading = _loading;
+@synthesize lastUpdatedTime = _lastUpdatedTime;
 @synthesize collectionView = _collectionView;
+@synthesize headerView = _headerView;
+@synthesize footerView = _footerView;
 
 - (id)init
 {
@@ -24,6 +29,19 @@
     }
     return self;
 }
+
+
+- (void)setLastUpdatedTime:(NSDate *)lastUpdatedTime
+{
+    _lastUpdatedTime = lastUpdatedTime;
+    if (_headerView != nil)
+    {        
+        NSString *timeString = [MXDateUtil formatDateFuzzy:_lastUpdatedTime];
+        _headerView.lastUpateTimeLabel.text = [NSString stringWithFormat:localize(@"Last updated at"), timeString];
+    }
+}
+
+
 
 - (void)loadView
 {
@@ -48,13 +66,16 @@
     self.view = _collectionView;
     
     
-    FSCollectionHeaderView *headView = [[FSCollectionHeaderView alloc] init];
+    _headerView = [[FSCollectionHeaderView alloc] init];
+    _collectionView.headerView = _headerView;
+    if (_lastUpdatedTime != nil)
+    {
+        [self setLastUpdatedTime:_lastUpdatedTime];
+    }
     
-    _collectionView.headerView = headView;
-    
-    FSCollectionFooterView *footerView = [[FSCollectionFooterView alloc] init];
-    footerView.frame = CGRectMake(0, 0, 0, 40);
-    _collectionView.footerView = footerView;
+    _footerView = [[FSCollectionFooterView alloc] init];
+    _footerView.frame = CGRectMake(0, 0, 0, 40);
+    _collectionView.footerView = _footerView;
 }
 
 
@@ -85,6 +106,55 @@
 - (CGFloat)collectionView:(PSCollectionView *)collectionView heightForRowAtIndex:(NSInteger)index
 {
     return 128;
+}
+
+
+- (void)beginUpdate
+{
+    _updating = YES;
+    _headerView.hintLabel.text = localize(@"Updating");
+    [UIView beginAnimations:nil context:nil];
+    [self.collectionView setContentInset:UIEdgeInsetsMake(55, 0, 0, 0)];
+    [UIView commitAnimations];
+    self.collectionView.userInteractionEnabled = NO;
+}
+
+- (void)endUpdate
+{
+    [self setLastUpdatedTime:[[NSDate alloc] init]];
+    _updating = NO;
+    _headerView.hintLabel.text = localize(@"Pull to refresh");
+    [UIView beginAnimations:nil context:nil];
+    [self.collectionView setContentInset:UIEdgeInsetsMake(0, 0, 0, 0)];
+    [UIView commitAnimations];
+    self.collectionView.userInteractionEnabled = YES;
+}
+
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    if (_updating || _loading) return;
+    
+    if (scrollView.contentOffset.y < -55)
+    {
+        _headerView.hintLabel.text = localize(@"Release to refresh");
+    }
+    else
+    {
+        _headerView.hintLabel.text = localize(@"Pull to refresh");
+    }
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    if (scrollView.contentOffset.y < 0)
+    {
+        [self setLastUpdatedTime:_lastUpdatedTime];
+    }
+    if (scrollView.contentOffset.y < -55)
+    {
+        [self beginUpdate];
+    }
 }
 
 @end

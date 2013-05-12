@@ -29,7 +29,7 @@
 {
     [super loadView];
     
-    [self reloadEntries];
+    [self beginUpdate];
 }
 
 
@@ -51,34 +51,14 @@
 {
     FSEntryCollectionViewCell *cell = (FSEntryCollectionViewCell *)[super collectionView:collectionView cellForRowAtIndex:index];
     NSDictionary *entry = _entries[index];
-    cell.textLabel.text = [NSString stringWithFormat:@"%@", entry[@"title"]];
-    
-    cell.textLabel.frame = CGRectMake(5, 0, collectionView.colWidth - 10, 20);
-    
+    [cell renderEntry:entry withColWidth:collectionView.colWidth];
     return cell;
 }
 
 - (CGFloat)collectionView:(PSCollectionView *)collectionView heightForRowAtIndex:(NSInteger)index
 {
     NSDictionary *entry = _entries[index];
-    NSDictionary *image = entry[@"image"];
-    NSNumber *height = nil;
-    if ([image valueForKey:@"height"] != [NSNull null])
-    {
-        NSNumber *imageWidth = nil;
-        NSNumber *imageHeight = nil;
-
-        imageHeight = [image valueForKey:@"height"];
-        imageWidth = [image valueForKey:@"width"];
-        float ratio = collectionView.colWidth / imageWidth.floatValue;
-        height = [NSNumber numberWithFloat:ratio * imageHeight.floatValue];
-    }
-    
-    if (height == nil)
-    {
-        height = [NSNumber numberWithFloat:128];
-    }
-    return height.floatValue;
+    return [FSEntryCollectionViewCell sizeOfCell:entry withColWidth:collectionView.colWidth].height;
 }
 
 
@@ -104,6 +84,7 @@
                               success:^(AFHTTPRequestOperation *operation, id responseObject)
     {
         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+        [self endUpdate];
         
         if ([responseObject isKindOfClass:[NSArray class]])
         {
@@ -115,15 +96,17 @@
      
                               failure:^(AFHTTPRequestOperation *operation, NSError *error)
      {
-        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-        NSLog(@"Error: %@", error);
+         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+         [self endUpdate];
+         NSLog(@"Error: %@", error);
     }];
 }
 
-- (void)reloadEntries
+- (void)beginUpdate
 {
-    [_entries removeAllObjects];
+    [super beginUpdate];
     
+    [_entries removeAllObjects];
     [self loadEntries];
 }
 
@@ -135,26 +118,6 @@
     FSNavigationController *navigationController = [FSNavigationController sharedInstance];
     FSEntryDetailSceneController *detailSceneController = [FSEntryDetailSceneController sharedInstance];
     [navigationController pushViewController:detailSceneController animated:YES];
-}
-
-
-
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
-{
-    int deltaY = scrollView.contentSize.height - scrollView.contentOffset.y - scrollView.frame.size.height;
-    
-    if (deltaY <= 20)
-    {
-        [self loadEntries];
-    }
-}
-
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
-{
-    if (!decelerate)
-    {
-        [self scrollViewDidEndDecelerating:scrollView];
-    }
 }
 
 @end

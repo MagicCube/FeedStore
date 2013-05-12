@@ -1,0 +1,19 @@
+"a second ago" = "a second ago";
+"%d seconds ago" = "%d seconds ago";
+"a minute ago" = "a minute ago";
+"%d minutes ago" = "%d minutes ago";
+"an hour ago" = "an hour ago";
+"%d hours ago" = "%d hour ago";
+"yesterday" = "yesterday";
+"%d days ago" = "%d days ago";
+"a month ago" = "a month ago";
+"%d months ago" = "%d months ago";
+"one year ago" = "one year ago";
+"%d years ago" = "%d years ago";
+
+"Pull to refresh" = "Pull to refresh...";
+"Release to refresh" = "Release to refresh...";
+"Updating" = "Updating...";
+"Loading" = "Loading...";
+"Last updated at" = "Last updated at %@";
+"Not updated yet" = "Not updated yet";

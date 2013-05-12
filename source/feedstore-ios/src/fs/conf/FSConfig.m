@@ -12,13 +12,13 @@
 
 + (NSDictionary *)settings
 {
-    static NSDictionary *settings = nil;
-    if (settings == nil)
+    static NSDictionary *_settings = nil;
+    if (_settings == nil)
     {
         NSString *path = [[NSBundle mainBundle] pathForResource:@"App-Config" ofType:@"plist"];
-        settings = [NSDictionary dictionaryWithContentsOfFile:path];
+        _settings = [NSDictionary dictionaryWithContentsOfFile:path];
     }
-    return settings;
+    return _settings;
 }
 
 

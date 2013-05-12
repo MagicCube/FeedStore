@@ -7,9 +7,17 @@
 //
 
 #import "PSCollectionViewCell.h"
+@class FSImageView;
 
 @interface FSEntryCollectionViewCell : PSCollectionViewCell
 
-@property (strong, nonatomic) UILabel *textLabel;
+@property (readonly, strong, nonatomic) FSImageView *imageView;
+@property (readonly, strong, nonatomic) UILabel *titleLabel;
+@property (readonly, strong, nonatomic) UIView *infoView;
+@property (readonly, strong, nonatomic) UILabel *channelLabel;
+@property (readonly, strong, nonatomic) UILabel *publishTimeLabel;
+
++ (CGSize)sizeOfCell:(NSDictionary *)entry withColWidth:(CGFloat)colWidth;
+- (void)renderEntry:(NSDictionary *)entry withColWidth:(CGFloat)colWidth;
 
 @end

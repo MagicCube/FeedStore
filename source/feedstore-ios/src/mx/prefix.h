@@ -9,7 +9,11 @@
 #ifndef mx_prefix
 #define mx_prefix
 
+#define localize(key) \
+    NSLocalizedString(key, nil)
+
 #import "ui/UIColor+.h"
 #import "ui/UIDevice+iPad.h"
+#import "util/MXDateUtil.h"
 
 #endif

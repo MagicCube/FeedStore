@@ -40,6 +40,12 @@
 		BA753D30173E9AB900205BA2 /* FSCollectionFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA753D2F173E9AB900205BA2 /* FSCollectionFooterView.m */; };
 		BA7A6C15173E796D00BF2386 /* FSEntryDetailSceneController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7A6C14173E796D00BF2386 /* FSEntryDetailSceneController.m */; };
 		BA83C026173E2220004F8695 /* FSApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = BA83C01E173E2220004F8695 /* FSApplication.m */; };
+		BA9A840B173F8B4B00ACEB83 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = BA9A8409173F8B4B00ACEB83 /* logo.png */; };
+		BA9A840C173F8B4B00ACEB83 /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA9A840A173F8B4B00ACEB83 /* logo@2x.png */; };
+		BA9A8411173F981400ACEB83 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BA9A8413173F981400ACEB83 /* Localizable.strings */; };
+		BA9A8418173FA6C600ACEB83 /* MXDateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = BA9A8417173FA6C600ACEB83 /* MXDateUtil.m */; };
+		BA9A8420173FB16A00ACEB83 /* rss-placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = BA9A841F173FB16A00ACEB83 /* rss-placeholder.png */; };
+		BA9A8423173FB30E00ACEB83 /* FSImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA9A8422173FB30D00ACEB83 /* FSImageView.m */; };
 		BAB295BB173E0FC20054BBD3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB295BA173E0FC20054BBD3 /* UIKit.framework */; };
 		BAB295BD173E0FC20054BBD3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB295BC173E0FC20054BBD3 /* Foundation.framework */; };
 		BAB295BF173E0FC20054BBD3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB295BE173E0FC20054BBD3 /* CoreGraphics.framework */; };
@@ -103,6 +109,15 @@
 		BA83C029173E22FB004F8695 /* UIColor+.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+.h"; sourceTree = "<group>"; };
 		BA83C02A173E2343004F8695 /* prefix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = prefix.h; sourceTree = "<group>"; };
 		BA83C032173E2741004F8695 /* App-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "App-Prefix.pch"; sourceTree = "<group>"; };
+		BA9A8409173F8B4B00ACEB83 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		BA9A840A173F8B4B00ACEB83 /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
+		BA9A8412173F981400ACEB83 /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		BA9A8414173F982D00ACEB83 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		BA9A8416173FA6C600ACEB83 /* MXDateUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXDateUtil.h; sourceTree = "<group>"; };
+		BA9A8417173FA6C600ACEB83 /* MXDateUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXDateUtil.m; sourceTree = "<group>"; };
+		BA9A841F173FB16A00ACEB83 /* rss-placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rss-placeholder.png"; sourceTree = "<group>"; };
+		BA9A8421173FB30D00ACEB83 /* FSImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSImageView.h; sourceTree = "<group>"; };
+		BA9A8422173FB30D00ACEB83 /* FSImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSImageView.m; sourceTree = "<group>"; };
 		BAB295B7173E0FC20054BBD3 /* FeedStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FeedStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAB295BA173E0FC20054BBD3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BAB295BC173E0FC20054BBD3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -238,6 +253,7 @@
 			children = (
 				BA753D32173E9AD900205BA2 /* entry */,
 				BA753D31173E9AC300205BA2 /* collection */,
+				BA9A8424173FB32900ACEB83 /* image */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -292,6 +308,7 @@
 			isa = PBXGroup;
 			children = (
 				BA83C028173E22A1004F8695 /* ui */,
+				BA9A8415173FA66F00ACEB83 /* util */,
 				BA83C02A173E2343004F8695 /* prefix.h */,
 			);
 			path = mx;
@@ -305,6 +322,32 @@
 				BA598269173E56B2002A181E /* UIDevice+iPad.m */,
 			);
 			path = ui;
+			sourceTree = "<group>";
+		};
+		BA9A840E173F97C700ACEB83 /* locales */ = {
+			isa = PBXGroup;
+			children = (
+				BA9A8413173F981400ACEB83 /* Localizable.strings */,
+			);
+			path = locales;
+			sourceTree = "<group>";
+		};
+		BA9A8415173FA66F00ACEB83 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				BA9A8416173FA6C600ACEB83 /* MXDateUtil.h */,
+				BA9A8417173FA6C600ACEB83 /* MXDateUtil.m */,
+			);
+			path = util;
+			sourceTree = "<group>";
+		};
+		BA9A8424173FB32900ACEB83 /* image */ = {
+			isa = PBXGroup;
+			children = (
+				BA9A8421173FB30D00ACEB83 /* FSImageView.h */,
+				BA9A8422173FB30D00ACEB83 /* FSImageView.m */,
+			);
+			name = image;
 			sourceTree = "<group>";
 		};
 		BAB295AE173E0FC20054BBD3 = {
@@ -355,6 +398,7 @@
 				BA59824E173E42D0002A181E /* app */,
 				BAB295DE173E14B00054BBD3 /* icons */,
 				BAB295DF173E14B00054BBD3 /* images */,
+				BA9A840E173F97C700ACEB83 /* locales */,
 				BAB295E4173E15860054BBD3 /* App-Info.plist */,
 				BA585637173E284200FBE9F2 /* App-Config.plist */,
 			);
@@ -371,8 +415,11 @@
 		BAB295DF173E14B00054BBD3 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				BA9A8409173F8B4B00ACEB83 /* logo.png */,
+				BA9A840A173F8B4B00ACEB83 /* logo@2x.png */,
 				BA598259173E4FBD002A181E /* navigation-bar-bg.png */,
 				BA59825B173E502D002A181E /* navigation-bar-bg@2x.png */,
+				BA9A841F173FB16A00ACEB83 /* rss-placeholder.png */,
 			);
 			path = images;
 			sourceTree = "<group>";
@@ -415,6 +462,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				"zh-Hans",
 			);
 			mainGroup = BAB295AE173E0FC20054BBD3;
 			productRefGroup = BAB295B8173E0FC20054BBD3 /* Products */;
@@ -446,6 +494,10 @@
 				BA59824D173E4123002A181E /* Default-Portrait~ipad.png in Resources */,
 				BA59825A173E4FBD002A181E /* navigation-bar-bg.png in Resources */,
 				BA59825C173E502D002A181E /* navigation-bar-bg@2x.png in Resources */,
+				BA9A840B173F8B4B00ACEB83 /* logo.png in Resources */,
+				BA9A840C173F8B4B00ACEB83 /* logo@2x.png in Resources */,
+				BA9A8411173F981400ACEB83 /* Localizable.strings in Resources */,
+				BA9A8420173FB16A00ACEB83 /* rss-placeholder.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,10 +558,24 @@
 				BA03712E173F68DB00EB513D /* FSApi.m in Sources */,
 				BA037132173F6CFD00EB513D /* FSConfig.m in Sources */,
 				BA037136173F6F7700EB513D /* FSResource.m in Sources */,
+				BA9A8418173FA6C600ACEB83 /* MXDateUtil.m in Sources */,
+				BA9A8423173FB30E00ACEB83 /* FSImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BA9A8413173F981400ACEB83 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BA9A8412173F981400ACEB83 /* en */,
+				BA9A8414173F982D00ACEB83 /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		BAB295D2173E0FC20054BBD3 /* Debug */ = {
