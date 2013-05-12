@@ -10,6 +10,7 @@
 
 @interface MXDateUtil : NSObject
 
++ (NSDate *)dateFromNumber:(NSNumber *)number;
 + (NSString *)formatDate:(NSDate *)date withFormatString:(NSString *)formatString;
 + (NSString*)formatDateFuzzy:(NSDate*)date;
 

@@ -4,10 +4,12 @@ import java.util.Date;
 
 import org.magiccube.feedstore.common.entity.AbstractEntity;
 import org.magiccube.feedstore.common.entity.ImageInfo;
+import org.magiccube.feedstore.core.feed.biz.FeedChannelManager;
 
 import com.google.appengine.api.datastore.Entity;
 import com.google.appengine.api.datastore.Key;
 import com.google.appengine.api.datastore.Text;
+import com.sun.syndication.feed.rss.Channel;
 
 public class FeedEntry extends AbstractEntity
 {
@@ -65,6 +67,19 @@ public class FeedEntry extends AbstractEntity
 	public void setChannelId(String p_id)
 	{
 		_channelId = p_id;
+	}
+	
+	public String getChannelTitle()
+	{
+		if (_channelId != null)
+		{
+			FeedChannel channel = FeedChannelManager.getInstance().getChannels().getEntityById(_channelId);
+			if (channel != null)
+			{
+				return channel.getTitle(); 
+			}
+		}
+		return null;
 	}
 	
 	

@@ -50,8 +50,8 @@
 - (void)_initLayer
 {
     CALayer *layer = self.layer;
-    layer.masksToBounds = YES;
-    layer.cornerRadius = 6;
+    //layer.masksToBounds = YES;
+    //layer.cornerRadius = 6;
     layer.borderWidth = 1;
     layer.borderColor = rgb(178, 178, 178).CGColor;
 }
@@ -113,8 +113,15 @@
         imageHeight = [image valueForKey:@"height"];
         imageWidth = [image valueForKey:@"width"];
         
-        float ratio = colWidth / imageWidth.floatValue;
-        height = ratio * imageHeight.floatValue;
+        if (imageWidth.floatValue != 0)
+        {
+            float ratio = colWidth / imageWidth.floatValue;
+            height = ratio * imageHeight.floatValue;
+        }
+        else
+        {
+            height = colWidth;
+        }
     }
     else
     {
@@ -127,7 +134,7 @@
 {
     NSString *title = entry[@"title"];
     CGSize size = [title sizeWithFont:[FSEntryCollectionViewCell titleFont] constrainedToSize:CGSizeMake(colWidth - 14, 10000) lineBreakMode:NSLineBreakByWordWrapping];
-    return size;
+    return CGSizeMake(colWidth, size.height);
 }
 
 + (CGSize)sizeOfCell:(NSDictionary *)entry withColWidth:(CGFloat)colWidth
@@ -154,15 +161,13 @@
     size = [FSEntryCollectionViewCell titleSizeOfEntry:entry withColWidth:colWidth];
     _titleLabel.frame = CGRectMake(7, frame.size.height + 5, colWidth - 14, size.height + 10);
     
-    _channelLabel.text = entry[@"channelId"];
-    _channelLabel.frame = CGRectMake(7, 1, colWidth - 14, 16);
+    _channelLabel.text = entry[@"channelTitle"];
+    _channelLabel.frame = CGRectMake(7, 2, colWidth - 14, 16);
     
-    NSNumber *timeNumber = (NSNumber *)entry[@"storedTime"];
-    long long time = [timeNumber longLongValue];
     
-    NSDate *date = [NSDate dateWithTimeIntervalSince1970:time / 1000];
+    NSDate *date = [MXDateUtil dateFromNumber:entry[@"storedTime"]];
     _publishTimeLabel.text = [MXDateUtil formatDateFuzzy:date];
-    _publishTimeLabel.frame = CGRectMake(7, 20, colWidth - 14, 16);
+    _publishTimeLabel.frame = CGRectMake(8, 20, colWidth - 14, 16);
 }
 
 @end

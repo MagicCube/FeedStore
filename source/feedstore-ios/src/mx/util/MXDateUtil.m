@@ -16,6 +16,16 @@
 
 @implementation MXDateUtil
 
+
++ (NSDate *)dateFromNumber:(NSNumber *)number
+{
+    long long time = [number longLongValue];
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:time / 1000];
+    return date;
+}
+
+
+
 + (NSString *)formatDate:(NSDate *)date withFormatString:(NSString *)formatString
 {
     if (date == nil)
@@ -26,8 +36,6 @@
     formatter.dateFormat = formatString;
     return [formatter stringFromDate:date];
 }
-
-
 
 + (NSString*)formatDateFuzzy:(NSDate*)date
 {

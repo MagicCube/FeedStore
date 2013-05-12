@@ -84,7 +84,14 @@
                               success:^(AFHTTPRequestOperation *operation, id responseObject)
     {
         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-        [self endUpdate];
+        if (self.updating)
+        {
+            [self endUpdate];
+        }
+        if (self.loading)
+        {
+            [self endLoad];
+        }
         
         if ([responseObject isKindOfClass:[NSArray class]])
         {
@@ -97,16 +104,34 @@
                               failure:^(AFHTTPRequestOperation *operation, NSError *error)
      {
          [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-         [self endUpdate];
+         if (self.updating)
+         {
+             [self endUpdate];
+         }
+         if (self.loading)
+         {
+             [self endLoad];
+         }
+         
          NSLog(@"Error: %@", error);
     }];
 }
 
 - (void)beginUpdate
 {
+    if (self.loading || self.updating) return;
+    
     [super beginUpdate];
     
     [_entries removeAllObjects];
+    [self loadEntries];
+}
+
+- (void)beginLoad
+{
+    if (self.loading || self.updating) return;
+    
+    [super beginLoad];
     [self loadEntries];
 }
 

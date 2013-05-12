@@ -111,6 +111,8 @@
 
 - (void)beginUpdate
 {
+    if (_loading || _updating) return;
+    
     _updating = YES;
     _headerView.hintLabel.text = localize(@"Updating");
     [UIView beginAnimations:nil context:nil];
@@ -121,6 +123,8 @@
 
 - (void)endUpdate
 {
+    if (!_updating) return;
+    
     [self setLastUpdatedTime:[[NSDate alloc] init]];
     _updating = NO;
     _headerView.hintLabel.text = localize(@"Pull to refresh");
@@ -128,6 +132,20 @@
     [self.collectionView setContentInset:UIEdgeInsetsMake(0, 0, 0, 0)];
     [UIView commitAnimations];
     self.collectionView.userInteractionEnabled = YES;
+}
+
+- (void)beginLoad
+{
+    if (_loading || _updating) return;
+    
+    _loading = YES;
+}
+
+- (void)endLoad
+{
+    if (!_loading) return;
+    
+    _loading = NO;
 }
 
 
@@ -154,6 +172,19 @@
     if (scrollView.contentOffset.y < -55)
     {
         [self beginUpdate];
+    }
+    
+    if (!decelerate)
+    {
+        [self scrollViewDidEndDecelerating:(UIScrollView *)scrollView];
+    }
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    if (scrollView.contentOffset.y - scrollView.contentSize.height - scrollView.frame.size.height < 20)
+    {
+        [self beginLoad];
     }
 }
 

@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>fs.api.host</key>
-	<string>192.168.0.109:8888</string>
+	<string>feedstore-01.appspot.com</string>
 	<key>fs.api.httpProtocol</key>
-	<string>http</string>
+	<string>https</string>
 	<key>fs.api.host.default</key>
 	<string>feedstore-01.appspot.com</string>
 </dict>

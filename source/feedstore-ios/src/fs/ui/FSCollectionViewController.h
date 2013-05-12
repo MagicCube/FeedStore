@@ -22,5 +22,7 @@
 
 - (void)beginUpdate;
 - (void)endUpdate;
+- (void)beginLoad;
+- (void)endLoad;
 
 @end
