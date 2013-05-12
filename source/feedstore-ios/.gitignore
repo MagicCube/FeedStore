@@ -1,4 +1,5 @@
 Podfile.lock
+Pods/
 build/
 *.pbxuser
 !default.pbxuser
