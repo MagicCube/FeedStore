@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		20BB3FCBBF2C4E19B72A4BFE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7102B6C61CE54D5D93991638 /* libPods.a */; };
+		BA03712A173F663900EB513D /* FSEntryStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = BA037129173F663900EB513D /* FSEntryStorage.m */; };
+		BA03712E173F68DB00EB513D /* FSApi.m in Sources */ = {isa = PBXBuildFile; fileRef = BA03712D173F68DB00EB513D /* FSApi.m */; };
+		BA037132173F6CFD00EB513D /* FSConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = BA037131173F6CFD00EB513D /* FSConfig.m */; };
+		BA037136173F6F7700EB513D /* FSResource.m in Sources */ = {isa = PBXBuildFile; fileRef = BA037135173F6F7700EB513D /* FSResource.m */; };
 		BA585638173E284200FBE9F2 /* App-Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA585637173E284200FBE9F2 /* App-Config.plist */; };
 		BA58563E173E2C2000FBE9F2 /* App.png in Resources */ = {isa = PBXBuildFile; fileRef = BA58563D173E2C2000FBE9F2 /* App.png */; };
 		BA585640173E2C2500FBE9F2 /* App@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA58563F173E2C2500FBE9F2 /* App@2x.png */; };
@@ -46,6 +50,14 @@
 /* Begin PBXFileReference section */
 		459D6111A85142C1819DAEE9 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		7102B6C61CE54D5D93991638 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA037128173F663900EB513D /* FSEntryStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSEntryStorage.h; sourceTree = "<group>"; };
+		BA037129173F663900EB513D /* FSEntryStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSEntryStorage.m; sourceTree = "<group>"; };
+		BA03712C173F68DB00EB513D /* FSApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSApi.h; sourceTree = "<group>"; };
+		BA03712D173F68DB00EB513D /* FSApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSApi.m; sourceTree = "<group>"; };
+		BA037130173F6CFD00EB513D /* FSConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSConfig.h; sourceTree = "<group>"; };
+		BA037131173F6CFD00EB513D /* FSConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSConfig.m; sourceTree = "<group>"; };
+		BA037134173F6F7700EB513D /* FSResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSResource.h; sourceTree = "<group>"; };
+		BA037135173F6F7700EB513D /* FSResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSResource.m; sourceTree = "<group>"; };
 		BA585637173E284200FBE9F2 /* App-Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "App-Config.plist"; sourceTree = "<group>"; };
 		BA58563D173E2C2000FBE9F2 /* App.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = App.png; path = ../App.png; sourceTree = "<group>"; };
 		BA58563F173E2C2500FBE9F2 /* App@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "App@2x.png"; path = "../App@2x.png"; sourceTree = "<group>"; };
@@ -114,9 +126,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA03712B173F683900EB513D /* api */ = {
+			isa = PBXGroup;
+			children = (
+				BA03712C173F68DB00EB513D /* FSApi.h */,
+				BA03712D173F68DB00EB513D /* FSApi.m */,
+			);
+			path = api;
+			sourceTree = "<group>";
+		};
+		BA03712F173F6CEA00EB513D /* conf */ = {
+			isa = PBXGroup;
+			children = (
+				BA037130173F6CFD00EB513D /* FSConfig.h */,
+				BA037131173F6CFD00EB513D /* FSConfig.m */,
+			);
+			path = conf;
+			sourceTree = "<group>";
+		};
+		BA037133173F6F6A00EB513D /* res */ = {
+			isa = PBXGroup;
+			children = (
+				BA037134173F6F7700EB513D /* FSResource.h */,
+				BA037135173F6F7700EB513D /* FSResource.m */,
+			);
+			path = res;
+			sourceTree = "<group>";
+		};
 		BA4BF3DD173E3C1F00A91421 /* store */ = {
 			isa = PBXGroup;
 			children = (
+				BA037128173F663900EB513D /* FSEntryStorage.h */,
+				BA037129173F663900EB513D /* FSEntryStorage.m */,
 			);
 			path = store;
 			sourceTree = "<group>";
@@ -228,7 +269,10 @@
 		BA83C01B173E2220004F8695 /* fs */ = {
 			isa = PBXGroup;
 			children = (
+				BA03712B173F683900EB513D /* api */,
 				BA83C01C173E2220004F8695 /* app */,
+				BA03712F173F6CEA00EB513D /* conf */,
+				BA037133173F6F6A00EB513D /* res */,
 				BA4BF3DD173E3C1F00A91421 /* store */,
 				BA598252173E44C3002A181E /* ui */,
 			);
@@ -458,6 +502,10 @@
 				BA753D2A173E96C300205BA2 /* FSEntryCollectionSceneController.m in Sources */,
 				BA753D2D173E9A9A00205BA2 /* FSCollectionHeaderView.m in Sources */,
 				BA753D30173E9AB900205BA2 /* FSCollectionFooterView.m in Sources */,
+				BA03712A173F663900EB513D /* FSEntryStorage.m in Sources */,
+				BA03712E173F68DB00EB513D /* FSApi.m in Sources */,
+				BA037132173F6CFD00EB513D /* FSConfig.m in Sources */,
+				BA037136173F6F7700EB513D /* FSResource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,7 +12,12 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
     #import <QuartzCore/QuartzCore.h>
+    #import "AFNetworking.h"
 
     #import "mx/prefix.h"
+
+    #import "fs/api/FSApi.h"
+    #import "fs/res/FSResource.h"
+    #import "fs/conf/FSConfig.h"
     #import "fs/ui/FSNavigationController.h"
 #endif

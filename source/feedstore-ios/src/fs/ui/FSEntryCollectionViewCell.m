@@ -22,16 +22,10 @@
         layer.borderWidth = 1;
         layer.borderColor = UIColorRGB(178, 178, 178).CGColor;
         
-        self.textLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 100, 40)];
+        self.textLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 40)];
+        self.textLabel.font = [UIFont systemFontOfSize:10];
         self.textLabel.backgroundColor = [UIColor clearColor];
         [self addSubview:self.textLabel];
-        
-        static int labelCount = 0;
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(60, 0, 100, 40)];
-        label.textColor = UIColorHex(0xefefef);
-        label.backgroundColor = [UIColor clearColor];
-        label.text = [NSString stringWithFormat:@"%d", ++labelCount];
-        [self addSubview:label];
     }
     return self;
 }

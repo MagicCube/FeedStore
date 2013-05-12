@@ -12,4 +12,7 @@
 
 @property (strong, nonatomic) NSMutableArray *entries;
 
+- (void)loadEntries;
+- (void)reloadEntries;
+
 @end

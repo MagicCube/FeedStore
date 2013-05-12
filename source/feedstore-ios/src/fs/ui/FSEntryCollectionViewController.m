@@ -29,7 +29,7 @@
 {
     [super loadView];
     
-    [self loadEntries];
+    [self reloadEntries];
 }
 
 
@@ -50,29 +50,81 @@
 - (PSCollectionViewCell *)collectionView:(PSCollectionView *)collectionView cellForRowAtIndex:(NSInteger)index
 {
     FSEntryCollectionViewCell *cell = (FSEntryCollectionViewCell *)[super collectionView:collectionView cellForRowAtIndex:index];
-    cell.textLabel.text = [NSString stringWithFormat:@"%d", index + 1];
+    NSDictionary *entry = _entries[index];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@", entry[@"title"]];
+    
+    cell.textLabel.frame = CGRectMake(5, 0, collectionView.colWidth - 10, 20);
+    
     return cell;
 }
 
 - (CGFloat)collectionView:(PSCollectionView *)collectionView heightForRowAtIndex:(NSInteger)index
 {
     NSDictionary *entry = _entries[index];
-    NSNumber *height = (NSNumber *)entry[@"height"];
-    return [height floatValue];
-}
+    NSDictionary *image = entry[@"image"];
+    NSNumber *height = nil;
+    if ([image valueForKey:@"height"] != [NSNull null])
+    {
+        NSNumber *imageWidth = nil;
+        NSNumber *imageHeight = nil;
 
+        imageHeight = [image valueForKey:@"height"];
+        imageWidth = [image valueForKey:@"width"];
+        float ratio = collectionView.colWidth / imageWidth.floatValue;
+        height = [NSNumber numberWithFloat:ratio * imageHeight.floatValue];
+    }
+    
+    if (height == nil)
+    {
+        height = [NSNumber numberWithFloat:128];
+    }
+    return height.floatValue;
+}
 
 
 
 - (void)loadEntries
 {
-    for (NSInteger i = 0; i < 20; i++)
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+    
+    NSString *after = nil;
+    if (_entries.count > 0)
     {
-        NSDictionary *entry = @{ @"height": [NSNumber numberWithInt:(192 + arc4random() % 150)] };
-        [_entries addObject:entry];
+        after = _entries.lastObject[@"id"];
     }
     
-    [super.collectionView reloadData];
+    int count = 20;
+    if ([UIDevice currentDevice].isPad)
+    {
+        count = 25;
+    }
+    
+    [[FSApi createHTTPClient] getPath:@"entry"
+                           parameters:@{ @"count": [NSNumber numberWithInt:count], @"after": (after != nil ? after : [NSNull null]) }
+                              success:^(AFHTTPRequestOperation *operation, id responseObject)
+    {
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+        
+        if ([responseObject isKindOfClass:[NSArray class]])
+        {
+            [_entries addObjectsFromArray:responseObject];
+            [self.collectionView reloadData];
+        }
+    }
+  
+     
+                              failure:^(AFHTTPRequestOperation *operation, NSError *error)
+     {
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+        NSLog(@"Error: %@", error);
+    }];
+}
+
+- (void)reloadEntries
+{
+    [_entries removeAllObjects];
+    
+    [self loadEntries];
 }
 
 

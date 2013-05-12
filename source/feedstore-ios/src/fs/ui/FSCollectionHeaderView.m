@@ -16,7 +16,6 @@
     if (self)
     {
         self.frame = CGRectMake(0, -40, 0, 80);
-        self.backgroundColor = [UIColor grayColor];
     }
     return self;
 }

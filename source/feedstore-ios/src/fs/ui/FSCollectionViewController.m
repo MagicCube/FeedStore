@@ -78,7 +78,6 @@
     if (cell == nil)
     {
         cell = [[cellClass alloc] init];
-        NSLog(@"Create New");
     }
     return cell;
 }
