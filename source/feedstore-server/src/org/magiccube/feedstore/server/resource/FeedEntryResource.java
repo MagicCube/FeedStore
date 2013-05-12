@@ -16,14 +16,14 @@ public class FeedEntryResource extends AbstractResource
 	@Produces("application/json")
 	public EntityList<FeedEntry> getEntries(
 			@DefaultValue("25") @QueryParam("count") int p_count,
-			@DefaultValue("") @QueryParam("first") String p_firstId
+			@DefaultValue("") @QueryParam("after") String p_after
 			)
 	{
-		if (p_firstId != null && p_firstId.equals(""))
+		if (p_after != null && p_after.equals(""))
 		{
-			p_firstId = null;
+			p_after = null;
 		}
-		EntityList<FeedEntry> entries = FeedManager.getInstance().fetchEntries(p_count, p_firstId);
+		EntityList<FeedEntry> entries = FeedManager.getInstance().fetchEntries(p_count, p_after);
 		return entries;
 	}
 }

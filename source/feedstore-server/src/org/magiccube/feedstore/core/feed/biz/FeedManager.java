@@ -4,6 +4,9 @@ import org.magiccube.feedstore.common.entity.EntityList;
 import org.magiccube.feedstore.core.feed.dao.FeedEntryDao;
 import org.magiccube.feedstore.core.feed.entity.FeedEntry;
 
+import com.google.appengine.api.datastore.Entity;
+import com.google.appengine.api.datastore.Key;
+import com.google.appengine.api.datastore.KeyFactory;
 import com.google.appengine.api.datastore.Query;
 
 public class FeedManager
@@ -34,9 +37,17 @@ public class FeedManager
 	
 	
 	
-	public EntityList<FeedEntry> fetchEntries(int p_count, String p_after)
+	public EntityList<FeedEntry> fetchEntries(int p_count, String p_afterId)
 	{
 		Query query = getEntryDao().createQuery();
+		if (p_afterId != null)
+		{
+			Key key = KeyFactory.stringToKey(p_afterId);
+			query.addFilter(
+					Entity.KEY_RESERVED_PROPERTY,
+	                Query.FilterOperator.LESS_THAN,
+	                key);
+		}
 		EntityList<FeedEntry> entries = getEntryDao().select(query, 0, p_count);
 		return entries;
 	}

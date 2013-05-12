@@ -123,8 +123,15 @@ public class Feedlet
 				feedEntry.setContent(entry.getDescription().getValue());
 			}
 			
-			ImageInfo image = ImageInfo.createFromHtml(feedEntry.getContent());
-			feedEntry.setImage(image);
+			try
+			{
+				ImageInfo image = ImageInfo.createFromHtml(feedEntry.getContent());
+				feedEntry.setImage(image);
+			}
+			catch (Exception e)
+			{
+				
+			}
 			
 			result.add(feedEntry);
 		}
