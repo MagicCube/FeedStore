@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DTCoreText.h"
 
-@interface FSImageView : UIImageView
+@interface FSLazyImageView : UIImageView
+
+@property (strong, nonatomic) NSURL *url;
 
 @end

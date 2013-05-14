@@ -36,6 +36,14 @@ public class FeedManager
 	}
 	
 	
+	public boolean hasEntityWithUrl(String p_url)
+	{
+		Query query = getEntryDao().createQuery();
+		query.addFilter("url", Query.FilterOperator.EQUAL, p_url);
+		EntityList<FeedEntry> entries = getEntryDao().select(query, 0, 1);
+		return entries.size() > 0;
+	}
+	
 	
 	public EntityList<FeedEntry> fetchEntries(int p_count, String p_afterId)
 	{

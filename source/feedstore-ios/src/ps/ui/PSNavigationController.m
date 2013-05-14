@@ -90,8 +90,8 @@ viewControllers = _viewControllers;
 }
 
 #pragma mark - Push/Pop
-const CGFloat kPushPopScale = 0.95;
-const CGFloat kOverlayViewAlpha = 0.75;
+const CGFloat kPushPopScale = 0.9;
+const CGFloat kOverlayViewAlpha = 0.7;
 const CGFloat kAnimationDuration = 0.35;
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {

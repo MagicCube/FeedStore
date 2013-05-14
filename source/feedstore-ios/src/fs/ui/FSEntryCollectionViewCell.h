@@ -7,11 +7,11 @@
 //
 
 #import "PSCollectionViewCell.h"
-@class FSImageView;
+@class FSLazyImageView;
 
 @interface FSEntryCollectionViewCell : PSCollectionViewCell
 
-@property (readonly, strong, nonatomic) FSImageView *imageView;
+@property (readonly, strong, nonatomic) FSLazyImageView *imageView;
 @property (readonly, strong, nonatomic) UILabel *titleLabel;
 @property (readonly, strong, nonatomic) UIView *infoView;
 @property (readonly, strong, nonatomic) UILabel *channelLabel;

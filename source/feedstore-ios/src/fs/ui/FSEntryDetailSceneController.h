@@ -7,8 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DTCoreText.h"
 
-@interface FSEntryDetailSceneController : UIViewController
+@interface FSEntryDetailSceneController : UIViewController <DTAttributedTextContentViewDelegate, DTLazyImageViewDelegate>
+
+@property (assign, nonatomic) NSDictionary *entry;
+@property (readonly, strong, nonatomic) UILabel *titleLabel;
+@property (readonly, strong, nonatomic) DTAttributedTextView *textView;
 
 + (FSEntryDetailSceneController *)sharedInstance;
 

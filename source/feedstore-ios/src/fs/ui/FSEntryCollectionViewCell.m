@@ -8,7 +8,7 @@
 
 #import "FSEntryCollectionViewCell.h"
 #import "../../ps/ui/PSCollectionView.h"
-#import "FSImageView.h"
+#import "FSLazyImageView.h"
 
 @implementation FSEntryCollectionViewCell
 
@@ -67,8 +67,7 @@
 
 - (void)_initImageView
 {
-    _imageView = [[FSImageView alloc] init];
-    _imageView.backgroundColor = rgbhex(0xfafafa);
+    _imageView = [[FSLazyImageView alloc] init];
     [self addSubview:_imageView];
 }
 
@@ -156,6 +155,24 @@
     CGSize size = [FSEntryCollectionViewCell imageViewSizeOfEntry:entry withColWidth:colWidth];
     CGRect frame = CGRectMake(0, 0, size.width, size.height);
     _imageView.frame = frame;
+    if (entry[@"image"] != [NSNull null])
+    {
+        NSDictionary *image = entry[@"image"];
+        NSString *url = image[@"url"];
+        if (url != nil)
+        {
+            _imageView.url = [NSURL URLWithString:url];
+        }
+        else
+        {
+            _imageView.url = nil;
+        }
+    }
+    else
+    {
+        _imageView.url = nil;
+    }
+
 
     _titleLabel.text = entry[@"title"];
     size = [FSEntryCollectionViewCell titleSizeOfEntry:entry withColWidth:colWidth];
@@ -163,7 +180,6 @@
     
     _channelLabel.text = entry[@"channelTitle"];
     _channelLabel.frame = CGRectMake(7, 2, colWidth - 14, 16);
-    
     
     NSDate *date = [MXDateUtil dateFromNumber:entry[@"storedTime"]];
     _publishTimeLabel.text = [MXDateUtil formatDateFuzzy:date];

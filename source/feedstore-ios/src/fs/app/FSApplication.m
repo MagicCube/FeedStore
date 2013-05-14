@@ -8,6 +8,7 @@
 
 #import "FSApplication.h"
 #import "../ui/FSRootViewController.h"
+#import "../ui/FSEntryDetailSceneController.h"
 
 @implementation FSApplication
 
@@ -50,6 +51,8 @@ static FSApplication *__sharedApplication = nil;
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackTranslucent];
     [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:YES];
+    
+    [FSEntryDetailSceneController sharedInstance];
     self.window.rootViewController = self.rootViewController;
     
     return YES;

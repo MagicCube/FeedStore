@@ -45,7 +45,7 @@
 		BA9A8411173F981400ACEB83 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BA9A8413173F981400ACEB83 /* Localizable.strings */; };
 		BA9A8418173FA6C600ACEB83 /* MXDateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = BA9A8417173FA6C600ACEB83 /* MXDateUtil.m */; };
 		BA9A8420173FB16A00ACEB83 /* rss-placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = BA9A841F173FB16A00ACEB83 /* rss-placeholder.png */; };
-		BA9A8423173FB30E00ACEB83 /* FSImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA9A8422173FB30D00ACEB83 /* FSImageView.m */; };
+		BA9A8423173FB30E00ACEB83 /* FSLazyImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA9A8422173FB30D00ACEB83 /* FSLazyImageView.m */; };
 		BAB295BB173E0FC20054BBD3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB295BA173E0FC20054BBD3 /* UIKit.framework */; };
 		BAB295BD173E0FC20054BBD3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB295BC173E0FC20054BBD3 /* Foundation.framework */; };
 		BAB295BF173E0FC20054BBD3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB295BE173E0FC20054BBD3 /* CoreGraphics.framework */; };
@@ -111,13 +111,13 @@
 		BA83C032173E2741004F8695 /* App-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "App-Prefix.pch"; sourceTree = "<group>"; };
 		BA9A8409173F8B4B00ACEB83 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		BA9A840A173F8B4B00ACEB83 /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
-		BA9A8412173F981400ACEB83 /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		BA9A8414173F982D00ACEB83 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		BA9A8412173F981400ACEB83 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		BA9A8414173F982D00ACEB83 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		BA9A8416173FA6C600ACEB83 /* MXDateUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXDateUtil.h; sourceTree = "<group>"; };
 		BA9A8417173FA6C600ACEB83 /* MXDateUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXDateUtil.m; sourceTree = "<group>"; };
 		BA9A841F173FB16A00ACEB83 /* rss-placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rss-placeholder.png"; sourceTree = "<group>"; };
-		BA9A8421173FB30D00ACEB83 /* FSImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSImageView.h; sourceTree = "<group>"; };
-		BA9A8422173FB30D00ACEB83 /* FSImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSImageView.m; sourceTree = "<group>"; };
+		BA9A8421173FB30D00ACEB83 /* FSLazyImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSLazyImageView.h; sourceTree = "<group>"; };
+		BA9A8422173FB30D00ACEB83 /* FSLazyImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSLazyImageView.m; sourceTree = "<group>"; };
 		BAB295B7173E0FC20054BBD3 /* FeedStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FeedStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAB295BA173E0FC20054BBD3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BAB295BC173E0FC20054BBD3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -344,8 +344,8 @@
 		BA9A8424173FB32900ACEB83 /* image */ = {
 			isa = PBXGroup;
 			children = (
-				BA9A8421173FB30D00ACEB83 /* FSImageView.h */,
-				BA9A8422173FB30D00ACEB83 /* FSImageView.m */,
+				BA9A8421173FB30D00ACEB83 /* FSLazyImageView.h */,
+				BA9A8422173FB30D00ACEB83 /* FSLazyImageView.m */,
 			);
 			name = image;
 			sourceTree = "<group>";
@@ -559,7 +559,7 @@
 				BA037132173F6CFD00EB513D /* FSConfig.m in Sources */,
 				BA037136173F6F7700EB513D /* FSResource.m in Sources */,
 				BA9A8418173FA6C600ACEB83 /* MXDateUtil.m in Sources */,
-				BA9A8423173FB30E00ACEB83 /* FSImageView.m in Sources */,
+				BA9A8423173FB30E00ACEB83 /* FSLazyImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

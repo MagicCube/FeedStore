@@ -93,11 +93,6 @@ public class Feedlet
 		
 		for (SyndEntry entry : entries)
 		{
-			if (entry.getPublishedDate() == null)
-			{
-				continue;
-			}
-			
 			if (lastUpdatedTime != null)
 			{
 				int offset = entry.getPublishedDate().compareTo(lastUpdatedTime);
@@ -105,6 +100,11 @@ public class Feedlet
 				{
 					break;
 				}
+			}
+			String url = entry.getLink();
+			if (FeedManager.getInstance().hasEntityWithUrl(url))
+			{
+				break;
 			}
 			
 			FeedEntry feedEntry = new FeedEntry(entry.getTitle(), "rss", "text/html", _channel.getId());

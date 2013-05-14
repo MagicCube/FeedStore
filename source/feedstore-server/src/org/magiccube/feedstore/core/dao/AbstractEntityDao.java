@@ -8,6 +8,7 @@ import org.magiccube.feedstore.common.entity.AbstractEntity;
 import org.magiccube.feedstore.common.entity.EntityList;
 
 import com.google.appengine.api.datastore.Entity;
+import com.google.appengine.api.datastore.EntityNotFoundException;
 import com.google.appengine.api.datastore.FetchOptions;
 import com.google.appengine.api.datastore.Key;
 import com.google.appengine.api.datastore.KeyFactory;
@@ -52,7 +53,36 @@ public abstract class AbstractEntityDao<T extends AbstractEntity> extends Abstra
 		Query query = new Query(getEntityKind());
 		return query;
 	}
+	
+	public boolean containsId(String p_id)
+	{
+		Key key = KeyFactory.stringToKey(p_id);
+		try
+		{
+			Entity entity = getDatastoreService().get(key);
+			return entity != null;
+		}
+		catch (EntityNotFoundException e)
+		{
+			return false;
+		}
+	}
 
+	public T selectById(String p_id)
+	{
+		Key key = KeyFactory.stringToKey(p_id);
+		try
+		{
+			Entity entity = getDatastoreService().get(key);
+			T e = createEntityInstance();
+			e.fromGAEEntity(entity);
+			return e;
+		}
+		catch (EntityNotFoundException e)
+		{
+			return null;
+		}
+	}
 	
 	public EntityList<T> select(Query p_query, int p_offset, int p_limit)
 	{

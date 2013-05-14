@@ -142,6 +142,7 @@
 {
     FSNavigationController *navigationController = [FSNavigationController sharedInstance];
     FSEntryDetailSceneController *detailSceneController = [FSEntryDetailSceneController sharedInstance];
+    detailSceneController.entry = _entries[index];
     [navigationController pushViewController:detailSceneController animated:YES];
 }
 
